@@ -12,3 +12,5 @@ Archived materials should usually include:
 
 - [ONL Mindmup PDF](ONL-Mindmup.pdf)
 - [ONL Mindmup Summary](onl-mindmup-summary.md)
+- [ONL Streaming Rack Config Workbook](ONL-Streaming-Rack-Config.xlsx)
+- [ONL Streaming Rack Config Summary](onl-streaming-rack-config-summary.md)
