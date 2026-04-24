@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ONL Brain Repo Map</title>
+  <style>
+    :root {
+      --ink: #18221f;
+      --muted: #65736f;
+      --paper: #fbf6ea;
+      --card: rgba(255, 252, 243, 0.88);
+      --line: rgba(24, 34, 31, 0.14);
+      --forest: #243f34;
+      --moss: #6d7f52;
+      --gold: #e4b34d;
+      --clay: #c86f4a;
+      --blue: #537a8d;
+      --shadow: 0 24px 80px rgba(31, 45, 38, 0.16);
+      --radius: 26px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+      background:
+        radial-gradient(circle at top left, rgba(228, 179, 77, 0.32), transparent 32rem),
+        radial-gradient(circle at 90% 10%, rgba(83, 122, 141, 0.22), transparent 28rem),
+        linear-gradient(135deg, #f7eedc 0%, #eef0df 52%, #f6e4d6 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.32;
+      background-image:
+        linear-gradient(rgba(36, 63, 52, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(36, 63, 52, 0.08) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, black, transparent 85%);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .shell {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 56px;
+      position: relative;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      color: #fff8ea;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--forest), var(--moss));
+      box-shadow: 0 14px 30px rgba(36, 63, 52, 0.22);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+    }
+
+    .top-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .pill,
+    .micro-pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 252, 243, 0.68);
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.82rem;
+      text-decoration: none;
+      backdrop-filter: blur(12px);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+      gap: 22px;
+      align-items: stretch;
+      margin-bottom: 22px;
+    }
+
+    .hero-card,
+    .panel,
+    .section {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero-card {
+      padding: clamp(28px, 5vw, 58px);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      right: -90px;
+      bottom: -120px;
+      width: 320px;
+      height: 320px;
+      border: 44px solid rgba(228, 179, 77, 0.28);
+      border-radius: 50%;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--clay);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      line-height: 0.95;
+    }
+
+    h1 {
+      max-width: 760px;
+      font-size: clamp(3rem, 7vw, 6.6rem);
+      letter-spacing: -0.075em;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      letter-spacing: -0.055em;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      letter-spacing: -0.03em;
+    }
+
+    .wash {
+      color: var(--blue);
+      font-style: italic;
+    }
+
+    .hero-copy {
+      position: relative;
+      max-width: 720px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: 1.16rem;
+      line-height: 1.65;
+      z-index: 1;
+    }
+
+    .hero-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .panel {
+      padding: 24px;
+    }
+
+    .panel.dark {
+      color: #fff8ea;
+      background:
+        linear-gradient(145deg, rgba(36, 63, 52, 0.96), rgba(37, 58, 51, 0.88)),
+        radial-gradient(circle at top right, rgba(228, 179, 77, 0.25), transparent 22rem);
+    }
+
+    .panel.dark .eyebrow,
+    .panel.dark p,
+    .panel.dark li {
+      color: rgba(255, 248, 234, 0.72);
+    }
+
+    .search-wrap {
+      display: grid;
+      gap: 10px;
+    }
+
+    label {
+      color: rgba(255, 248, 234, 0.82);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    input {
+      width: 100%;
+      min-height: 50px;
+      padding: 0 16px;
+      border: 1px solid rgba(255, 248, 234, 0.2);
+      border-radius: 17px;
+      outline: none;
+      background: rgba(255, 248, 234, 0.11);
+      color: #fff8ea;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 1rem;
+    }
+
+    input::placeholder {
+      color: rgba(255, 248, 234, 0.5);
+    }
+
+    .mini-list {
+      margin: 18px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .section {
+      padding: clamp(22px, 3vw, 34px);
+      margin-top: 22px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: end;
+      margin-bottom: 22px;
+    }
+
+    .section-head p {
+      max-width: 520px;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      min-height: 210px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.45);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 5px;
+      background: var(--accent, var(--gold));
+    }
+
+    .card p {
+      margin: 10px 0 16px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .doc-list {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .doc-link {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      padding: 10px 12px;
+      border: 1px solid rgba(24, 34, 31, 0.1);
+      border-radius: 14px;
+      background: rgba(255, 252, 243, 0.66);
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.92rem;
+      text-decoration: none;
+    }
+
+    .doc-link:hover,
+    .pill:hover {
+      border-color: rgba(36, 63, 52, 0.35);
+      background: rgba(255, 252, 243, 0.95);
+      transform: translateY(-1px);
+    }
+
+    .doc-type {
+      flex: 0 0 auto;
+      color: var(--muted);
+      font-size: 0.74rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .tree {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+    }
+
+    .tree details {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 252, 243, 0.56);
+      overflow: hidden;
+    }
+
+    .tree summary {
+      cursor: pointer;
+      padding: 15px 18px;
+      font-weight: 800;
+    }
+
+    .tree ul {
+      display: grid;
+      gap: 6px;
+      margin: 0;
+      padding: 0 18px 18px 32px;
+      list-style: none;
+    }
+
+    .tree a {
+      color: var(--forest);
+      text-decoration: none;
+    }
+
+    .tree a:hover {
+      text-decoration: underline;
+    }
+
+    .note-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .note {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255, 252, 243, 0.64);
+    }
+
+    .note p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .grid,
+      .note-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head,
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <div class="topbar">
+      <a class="brand" href="../../README.md" aria-label="Open ONL Brain README">
+        <span class="brand-mark">O</span>
+        <span>ONL Brain</span>
+      </a>
+      <div class="top-actions">
+        <a class="micro-pill" href="onl-brain-overview.html">Visual overview</a>
+        <a class="micro-pill" href="../../README.md">Root README</a>
+        <span class="micro-pill">local static map</span>
+      </div>
+    </div>
+
+    <header class="hero">
+      <section class="hero-card">
+        <p class="eyebrow">Repo atlas</p>
+        <h1>Browse the <span class="wash">shape</span> of the ONL Brain.</h1>
+        <p class="hero-copy">
+          This page is a friendly table of contents for the repo. The Markdown files remain the source of truth;
+          this map is just the lobby, with signs on the walls and fewer existential errands.
+        </p>
+        <nav class="hero-nav" aria-label="Page sections">
+          <a class="pill" href="#core">Core Areas</a>
+          <a class="pill" href="#tree">File Tree</a>
+          <a class="pill" href="#markdown">Markdown In Chrome</a>
+        </nav>
+      </section>
+
+      <aside class="panel dark">
+        <div class="search-wrap">
+          <label for="filter">Search this map</label>
+          <input id="filter" type="search" placeholder="Try baptism, HR, source systems, agents...">
+        </div>
+        <ul class="mini-list">
+          <li>Links open local repo files.</li>
+          <li>Chrome shows Markdown as raw text unless we add a renderer.</li>
+          <li>Private ignored folders are intentionally not mapped here.</li>
+        </ul>
+      </aside>
+    </header>
+
+    <section id="core" class="section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Core areas</p>
+          <h2>The main shelves.</h2>
+        </div>
+        <p>Use these when you want the fastest sense of what belongs where.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card searchable" style="--accent: #e4b34d;" data-search="root readme orientation overview">
+          <h3>Start Here</h3>
+          <p>The top-level orientation for why this repo exists and how the pieces fit.</p>
+          <ul class="doc-list">
+            <li><a class="doc-link" href="../../README.md"><span>README</span><span class="doc-type">md</span></a></li>
+          </ul>
+        </article>
+
+        <article class="card searchable" style="--accent: #537a8d;" data-search="vision purpose roadmap success metrics definition online campus">
+          <h3>Vision</h3>
+          <p>Purpose, definition, roadmap, and success metrics for online campus ministry.</p>
+          <ul class="doc-list">
+            <li><a class="doc-link" href="../vision/README.md"><span>Vision overview</span><span class="doc-type">md</span></a></li>
+            <li><a class="doc-link" href="../vision/online-campus-definition.md"><span>Online campus definition</span><span class="doc-type">md</span></a></li>
+            <li><a class="doc-link" href="../vision/roadmap.md"><span>Roadmap</span><span class="doc-type">md</span></a></li>
+            <li><a class="doc-link" href="../vision/success-metrics.md"><span>Success metrics</span><span class="doc-type">md</span></a></li>
+          </ul>
+        </article>
+
+        <article class="card searchable" style="--accent: #6d7f52;" data-search="operations weekly checklist production workflow streaming rack technical systems budget HR compliance">
+          <h3>Operations</h3>
+          <p>Weekly rhythms, production systems, budgets, HR compliance, and repeatable checklists.</p>
+          <ul class="doc-list">
+            <li><a class="doc-link" href="../operations/README.md"><span>Operations overview</span><span class="doc-type">md</span></a></li>
+            <li><a class="doc-link" href="../operations/weekly-checklist.md"><span>Weekly checklist</span><span class="doc-type">md</span></a></li>
+            <li><a class="doc-link" href="../operations/production-workflow.md"><span>Production workflow</span><span class="doc-type">md</span></a></li>
+            <li><a class="doc-link" href="../operations/streaming-rack-system.md"><span>Streaming rack system</span><span class="doc-type">md</span></a></li>
+            <li><a class="doc-link" href="../operations/hr-compliance.md"><span>HR compliance</span><span class="doc-type">md</span></a></li>
+          </ul>
+        </article>
+
+        <article class="card searchable" style="--accent: #c86f4a;" data-search="people care connection baptism prayer response standards leadership key leaders groups">
+          <h3>People & Care</h3>
+          <p>Response standards, pipelines, care escalation, baptism, and leadership touchpoints.</p>
+          <ul class="doc-list">
+            <li><a class="doc-link" href="../people/README.md"><span>People overview</span><span class="doc-type">md</span></a></li>
+            <li><a class="doc-link" href="../people/online-community-response-standards.md"><span>Response standards</span><span class="doc-type">md</span></a></li>
+            <li><a class="doc-link" href="../people/baptism-response-workflow.md"><span>Baptism workflow</span><span class="doc-type">md</span></a></li>
+            <li><a class="doc-link" href="../people/leadership-care-responsibilities.md"><span>Leadership care</span><span class="doc-type">md</span></a></li>
+          </ul>
+        </article>
+
+        <article class="card searchable" style="--accent: #243f34;" data-search="governance source systems safety gmail calendar drive rock todoist confluence repositories">
+          <h3>Governance</h3>
+          <p>Source systems, access rules, related repositories, Confluence boundaries, and safety posture.</p>
+          <ul class="doc-list">
+            <li><a class="doc-link" href="../governance/README.md"><span>Governance overview</span><span class="doc-type">md</span></a></li>
+            <li><a class="doc-link" href="../governance/access-and-safety.md"><span>Access and safety</span><span class="doc-type">md</span></a></li>
+            <li><a class="doc-link" href="../governance/source-systems.md"><span>Source systems</span><span class="doc-type">md</span></a></li>
+            <li><a class="doc-link" href="../governance/knowledge-sources-backlog.md"><span>Knowledge backlog</span><span class="doc-type">md</span></a></li>
+          </ul>
+        </article>
+
+        <article class="card searchable" style="--accent: #8e6c88;" data-search="roles serve teams online campus pastor chat host tech admin roster development path">
+          <h3>Roles</h3>
+          <p>Serve teams, role maps, development paths, and online campus pastor responsibilities.</p>
+          <ul class="doc-list">
+            <li><a class="doc-link" href="../roles/role-map.md"><span>Role map</span><span class="doc-type">md</span></a></li>
+            <li><a class="doc-link" href="../roles/current-serve-teams.md"><span>Current serve teams</span><span class="doc-type">md</span></a></li>
+            <li><a class="doc-link" href="../roles/online-campus-pastor.md"><span>Online campus pastor</span><span class="doc-type">md</span></a></li>
+            <li><a class="doc-link" href="../roles/serve-team-roles.md"><span>Serve team roles</span><span class="doc-type">md</span></a></li>
+          </ul>
+        </article>
+
+        <article class="card searchable" style="--accent: #9f8555;" data-search="dashboards scorecard metrics backlog overview repo map">
+          <h3>Dashboards</h3>
+          <p>Visual summaries, dashboard ideas, and metric definitions for future operating rhythms.</p>
+          <ul class="doc-list">
+            <li><a class="doc-link" href="onl-brain-overview.html"><span>Visual overview</span><span class="doc-type">html</span></a></li>
+            <li><a class="doc-link" href="repo-map.html"><span>Repo map</span><span class="doc-type">html</span></a></li>
+            <li><a class="doc-link" href="metrics-framework.md"><span>Metrics framework</span><span class="doc-type">md</span></a></li>
+            <li><a class="doc-link" href="dashboard-backlog.md"><span>Dashboard backlog</span><span class="doc-type">md</span></a></li>
+          </ul>
+        </article>
+
+        <article class="card searchable" style="--accent: #7b9e89;" data-search="agents ministry personal cbt baptism budget confluence source digest roster response queue">
+          <h3>Agents</h3>
+          <p>Named helper roles for ministry workflows, source digestion, dashboards, and coaching.</p>
+          <ul class="doc-list">
+            <li><a class="doc-link" href="../../agents/README.md"><span>Agents overview</span><span class="doc-type">md</span></a></li>
+            <li><a class="doc-link" href="../../agents/ministry/README.md"><span>Ministry agents</span><span class="doc-type">md</span></a></li>
+            <li><a class="doc-link" href="../../agents/personal/cbt-coach.md"><span>CBT coach</span><span class="doc-type">md</span></a></li>
+          </ul>
+        </article>
+
+        <article class="card searchable" style="--accent: #b45c45;" data-search="archive source documents streaming rack mindmup summary historical artifacts">
+          <h3>Archive</h3>
+          <p>Summaries of imported artifacts and source documents that informed the operating system.</p>
+          <ul class="doc-list">
+            <li><a class="doc-link" href="../archive/README.md"><span>Archive overview</span><span class="doc-type">md</span></a></li>
+            <li><a class="doc-link" href="../archive/onl-mindmup-summary.md"><span>MindMup summary</span><span class="doc-type">md</span></a></li>
+            <li><a class="doc-link" href="../archive/onl-streaming-rack-config-summary.md"><span>Streaming rack source summary</span><span class="doc-type">md</span></a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="tree" class="section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">File tree</p>
+          <h2>The local shelves.</h2>
+        </div>
+        <p>This is intentionally shallow and human-readable. It maps public repo docs, not ignored private workspaces.</p>
+      </div>
+
+      <ul class="tree">
+        <li class="searchable" data-search="root readme data templates todoist">
+          <details open>
+            <summary>Root</summary>
+            <ul>
+              <li><a href="../../README.md">README.md</a></li>
+              <li><a href="../../data/README.md">data/README.md</a></li>
+              <li><a href="../../tools/todoist/README.md">tools/todoist/README.md</a></li>
+              <li><a href="../../templates/checklist-template.md">templates/checklist-template.md</a></li>
+              <li><a href="../../templates/role-description-template.md">templates/role-description-template.md</a></li>
+              <li><a href="../../templates/weekly-scorecard-template.md">templates/weekly-scorecard-template.md</a></li>
+            </ul>
+          </details>
+        </li>
+        <li class="searchable" data-search="agents ministry personal cbt coach">
+          <details open>
+            <summary>agents/</summary>
+            <ul>
+              <li><a href="../../agents/README.md">README.md</a></li>
+              <li><a href="../../agents/ministry/README.md">ministry/README.md</a></li>
+              <li><a href="../../agents/ministry/baptism-pipeline-agent.md">ministry/baptism-pipeline-agent.md</a></li>
+              <li><a href="../../agents/ministry/budget-watch-agent.md">ministry/budget-watch-agent.md</a></li>
+              <li><a href="../../agents/ministry/confluence-promotion-agent.md">ministry/confluence-promotion-agent.md</a></li>
+              <li><a href="../../agents/ministry/online-response-queue-agent.md">ministry/online-response-queue-agent.md</a></li>
+              <li><a href="../../agents/ministry/serve-team-roster-agent.md">ministry/serve-team-roster-agent.md</a></li>
+              <li><a href="../../agents/ministry/source-digest-agent.md">ministry/source-digest-agent.md</a></li>
+              <li><a href="../../agents/personal/README.md">personal/README.md</a></li>
+              <li><a href="../../agents/personal/cbt-coach.md">personal/cbt-coach.md</a></li>
+            </ul>
+          </details>
+        </li>
+        <li class="searchable" data-search="docs archive dashboards governance operations people roles vision">
+          <details open>
+            <summary>docs/</summary>
+            <ul>
+              <li><a href="../archive/README.md">archive/README.md</a></li>
+              <li><a href="../dashboards/README.md">dashboards/README.md</a></li>
+              <li><a href="../governance/README.md">governance/README.md</a></li>
+              <li><a href="../operations/README.md">operations/README.md</a></li>
+              <li><a href="../people/README.md">people/README.md</a></li>
+              <li><a href="../vision/README.md">vision/README.md</a></li>
+            </ul>
+          </details>
+        </li>
+        <li class="searchable" data-search="governance access safety source systems repositories confluence knowledge">
+          <details>
+            <summary>docs/governance/</summary>
+            <ul>
+              <li><a href="../governance/access-and-safety.md">access-and-safety.md</a></li>
+              <li><a href="../governance/agents-and-serve-teams.md">agents-and-serve-teams.md</a></li>
+              <li><a href="../governance/knowledge-sources-backlog.md">knowledge-sources-backlog.md</a></li>
+              <li><a href="../governance/promotion-review-agent.md">promotion-review-agent.md</a></li>
+              <li><a href="../governance/related-repositories.md">related-repositories.md</a></li>
+              <li><a href="../governance/repo-confluence-boundary.md">repo-confluence-boundary.md</a></li>
+              <li><a href="../governance/source-documents.md">source-documents.md</a></li>
+              <li><a href="../governance/source-systems.md">source-systems.md</a></li>
+            </ul>
+          </details>
+        </li>
+        <li class="searchable" data-search="operations budget hr compliance playbook production rack technical weekly">
+          <details>
+            <summary>docs/operations/</summary>
+            <ul>
+              <li><a href="../operations/budget-monitoring.md">budget-monitoring.md</a></li>
+              <li><a href="../operations/hr-compliance.md">hr-compliance.md</a></li>
+              <li><a href="../operations/online-campus-playbook-outline.md">online-campus-playbook-outline.md</a></li>
+              <li><a href="../operations/production-workflow.md">production-workflow.md</a></li>
+              <li><a href="../operations/streaming-rack-system.md">streaming-rack-system.md</a></li>
+              <li><a href="../operations/technical-systems.md">technical-systems.md</a></li>
+              <li><a href="../operations/weekly-checklist.md">weekly-checklist.md</a></li>
+            </ul>
+          </details>
+        </li>
+        <li class="searchable" data-search="people baptism care connection leadership response standards">
+          <details>
+            <summary>docs/people/</summary>
+            <ul>
+              <li><a href="../people/baptism-response-workflow.md">baptism-response-workflow.md</a></li>
+              <li><a href="../people/care-escalation.md">care-escalation.md</a></li>
+              <li><a href="../people/connection-pipelines.md">connection-pipelines.md</a></li>
+              <li><a href="../people/leadership-care-responsibilities.md">leadership-care-responsibilities.md</a></li>
+              <li><a href="../people/online-community-response-standards.md">online-community-response-standards.md</a></li>
+            </ul>
+          </details>
+        </li>
+        <li class="searchable" data-search="roles serve teams pastor lead chat host tech admin">
+          <details>
+            <summary>docs/roles/</summary>
+            <ul>
+              <li><a href="../roles/current-serve-teams.md">current-serve-teams.md</a></li>
+              <li><a href="../roles/online-campus-pastor.md">online-campus-pastor.md</a></li>
+              <li><a href="../roles/role-map.md">role-map.md</a></li>
+              <li><a href="../roles/serve-team-development-path.md">serve-team-development-path.md</a></li>
+              <li><a href="../roles/serve-team-roles.md">serve-team-roles.md</a></li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </section>
+
+    <section id="markdown" class="section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Markdown in Chrome</p>
+          <h2>How hard is nicer reading?</h2>
+        </div>
+      </div>
+
+      <div class="note-grid">
+        <article class="note searchable" data-search="chrome markdown raw extension">
+          <h3>Chrome by itself</h3>
+          <p>Easy but plain. Chrome can open `.md` files from disk, but it renders them as raw text. This is fine for quick inspection and not great for reading.</p>
+        </article>
+        <article class="note searchable" data-search="browser extension markdown viewer">
+          <h3>Browser extension</h3>
+          <p>Easiest personal option. Install a Markdown viewer extension and allow file URL access. Low effort, but it lives in your Chrome setup rather than in the repo.</p>
+        </article>
+        <article class="note searchable" data-search="local server markdown reader marked javascript">
+          <h3>Local reader page</h3>
+          <p>Medium-light. Add a `reader.html` that fetches Markdown and renders it in-browser. Chrome usually needs a tiny local server for this, because `file://` fetches are restricted.</p>
+        </article>
+        <article class="note searchable" data-search="static site generator html build wiki">
+          <h3>Generated mini-site</h3>
+          <p>Most polished. Generate HTML from Markdown into a browsable mini-wiki. Still lightweight, but it adds a build step. Worth it only if this map starts getting real daily use.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const input = document.querySelector("#filter");
+    const searchable = Array.from(document.querySelectorAll(".searchable"));
+
+    input.addEventListener("input", () => {
+      const term = input.value.trim().toLowerCase();
+
+      searchable.forEach((item) => {
+        const text = `${item.textContent} ${item.dataset.search || ""}`.toLowerCase();
+        item.classList.toggle("hidden", term.length > 0 && !text.includes(term));
+      });
+    });
+  </script>
+</body>
+</html>

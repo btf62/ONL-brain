@@ -10,11 +10,12 @@ The goal is useful assistance without accidental overreach.
 - Read access should be narrow, purposeful, and tied to a user-requested question.
 - Write-capable tools may exist, but agents must treat them as read-only unless a specific documented exception exists.
 - Sensitive personal, pastoral, financial, and staff information should be summarized only when needed and should not be copied into the repo unnecessarily.
+- Confidential HR review content should not be committed to the repo.
 - Humans decide and act; agents prepare, summarize, flag, and recommend.
 
 ## Hard prohibitions
 
-- Never send email.
+- Never send email to anyone other than Brad's own authenticated work account, except where a specific self-email exception below applies.
 - Never create calendar events.
 - Never update, move, delete, RSVP/respond to, invite attendees to, or otherwise modify calendar events.
 - Never schedule on Brad's behalf.
@@ -33,15 +34,34 @@ Allowed:
 - narrow reads needed to answer the current question
 - process summaries that avoid unnecessary private content
 - draft copy when explicitly requested and left for human review
+- sending a message to `bfiles@northridgerochester.com` only when Brad explicitly asks for an email to himself
 
 Not allowed:
 
 - broad exploratory searches
 - bulk reading
-- sending email
+- sending email to anyone other than `bfiles@northridgerochester.com`
 - forwarding email
 - archiving, labeling, deleting, or otherwise modifying messages unless explicitly approved for a specific action
 - copying sensitive email or pastoral content into the repo unless there is a clear reason and human review
+
+## Self-email exception
+
+An agent may send email to `bfiles@northridgerochester.com` only when Brad explicitly requests a self-email.
+
+Allowed uses:
+
+- daily triage maps
+- summaries Brad wants to keep in his inbox
+- reminders or checklists Brad asks to send to himself
+
+Rules:
+
+- The only recipient may be `bfiles@northridgerochester.com`.
+- Do not add CC or BCC recipients.
+- Do not forward existing emails under this exception.
+- Do not use this exception to contact another person indirectly.
+- If the requested content includes sensitive details, summarize minimally and avoid unnecessary private content.
 
 ## Google Calendar
 

@@ -41,7 +41,7 @@ Monitor online campus response queues so prayer requests, baptism interest, memb
 ## Boundaries
 
 - Do not send pastoral responses automatically unless a human explicitly approves the specific message.
-- Never send email through Gmail or any other email tool.
+- Never send email to anyone other than Brad's own work account when he explicitly requests a self-email.
 - Prepare email draft copy only when explicitly requested, and leave it for human review.
 - Do not run broad Gmail searches unless the user specifically asks for one.
 - Keep Gmail searches and reads narrow to the current pathway, person, date range, sender, label, or digest request.

@@ -19,6 +19,8 @@ The online campus pastor role currently appears to combine several distinct hats
 - Admin handoff owner
 - Analytics reporter
 - Systems documenter
+- HR compliance owner
+- 360 review writer
 
 ## Technical hats
 

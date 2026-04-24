@@ -16,6 +16,7 @@ The online campus pastor provides leadership, pastoral care, and operational ove
 - Develop serve team members and delegate responsibilities where appropriate
 - Maintain assigned key leader touchpoints as part of the broader campus pastor role
 - Coach assigned community group leaders and keep those relationships from going stale
+- Complete recurring HR compliance responsibilities, including Annual Staff Requirements and 360 review participation
 
 ## Leadership outcomes
 
@@ -23,6 +24,7 @@ The online campus pastor provides leadership, pastoral care, and operational ove
 - People are known, cared for, and invited into next steps
 - Key leaders and community group leaders experience steady pastoral presence
 - Weekend services are prepared and executed reliably
+- HR compliance and review responsibilities are completed without last-minute panic
 - Roles are documented well enough for others to serve successfully
 - The ministry is not dependent on undocumented tribal knowledge
 

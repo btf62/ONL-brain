@@ -128,6 +128,37 @@ Possible repo outputs:
 - recurring meeting or planning-pattern inventory
 - list of date ranges reviewed, without unnecessary event details
 
+### HR compliance and 360 review emails
+
+Likely value:
+
+- annual staff compliance deadlines
+- Rock Learn / Staff Training paths
+- 360 self-assessment instructions
+- Deep & Wide assignment patterns
+- supervisor review conversation prep
+- past examples of how Brad approached review-season work
+
+Current thought:
+
+- HR emails are useful source evidence, but they are not a safe long-term home for the workflow
+- this repo may capture dates, process shape, non-confidential instructions, and dashboard questions
+- confidential 360 review content, named employee feedback, and submitted review text should stay outside git
+- past inputs can be preserved in the ignored private workspace if Brad intentionally places them there
+
+Possible repo outputs:
+
+- HR compliance responsibility doc
+- 360 review workspace
+- annual review-season checklist
+- dashboard card for due dates and writing blocks
+- private archive guidance without committing sensitive content
+
+Related docs:
+
+- [HR Compliance Responsibilities](../operations/hr-compliance.md)
+- [360 Reviews Workspace](../workspaces/360-reviews/README.md)
+
 ### Shared drives and team documentation
 
 Likely value:

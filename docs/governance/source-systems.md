@@ -142,6 +142,28 @@ Do not use for:
 - replacing Rock RMS as the canonical database
 - making live mutations without explicit approval and guardrails
 
+### Rock Learn / Staff Training
+
+Role:
+
+- canonical system for staff training courses and completion status
+
+Use for:
+
+- Annual Staff Requirements
+- assigned LMS training
+- staff compliance course evidence
+
+Do not use for:
+
+- storing confidential 360 review writing
+- replacing HR email instructions or supervisor conversation notes
+- repo workflow documentation
+
+Note:
+
+- HR compliance workflows are summarized in [HR Compliance Responsibilities](../operations/hr-compliance.md).
+
 ### Google Drive
 
 Role:
@@ -185,7 +207,8 @@ Access rules:
 - Keep reads narrow; read only the messages needed to answer the current question or produce the requested digest.
 - Do not bulk-read, archive, label, delete, forward, or otherwise modify emails without explicit approval.
 - Drafting email copy may be allowed when explicitly requested, but drafts must remain reviewable by a human.
-- Never send email through Gmail or any other email tool.
+- Email may be sent only to `bfiles@northridgerochester.com`, and only when Brad explicitly requests a self-email.
+- Never send email to anyone else through Gmail or any other email tool.
 
 Do not use for:
 
