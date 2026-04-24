@@ -9,6 +9,25 @@ The repo and Confluence should support one another, not compete with one another
 The repo is the system of record for structured ministry operations.
 Confluence is the communication and discovery layer for the team.
 
+## Companion Confluence space
+
+The companion Confluence space for this repo is:
+
+- `Northridge ONL Operations`
+- URL: `https://northridgerochester.atlassian.net/wiki/spaces/NOO/overview`
+- Space key: `NOO`
+- Space ID: `111706116`
+- Overview page ID: `111706430`
+
+The space description currently says it is the documentation wiki for Northridge ONL vision, operations, and pastoring.
+
+Current pages found in the space:
+
+- `Northridge ONL Operations`
+- `Template - Decision documentation`
+- `Template - Meeting notes`
+- `Template - Project plan`
+
 ## Core principle
 
 - Put systems in the repo.

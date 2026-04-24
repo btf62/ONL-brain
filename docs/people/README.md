@@ -9,6 +9,7 @@ This area exists to ensure the online ministry is not merely producing content, 
 - Prayer requests
 - Pastoral follow-up
 - Baptism and membership pathways
+- Text HELLO check-ins
 - Serving conversations
 - Group or community next steps
 - Care escalation and referral
@@ -23,5 +24,7 @@ This area exists to ensure the online ministry is not merely producing content, 
 
 ## Key documents
 
+- [Baptism Response Workflow](baptism-response-workflow.md)
 - [Connection Pipelines](connection-pipelines.md)
 - [Care Escalation](care-escalation.md)
+- [Online Community Response Standards](online-community-response-standards.md)

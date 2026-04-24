@@ -15,6 +15,8 @@ The online campus pastor role currently appears to combine several distinct hats
 - Script writer
 - Service coordinator
 - Host scheduler
+- Giveaway coordinator
+- Admin handoff owner
 - Analytics reporter
 - Systems documenter
 
@@ -43,6 +45,7 @@ Use this document to decide:
 
 ## Next linked docs
 
+- [Current Serve Teams](current-serve-teams.md)
 - [Online Campus Pastor Job Description](online-campus-pastor.md)
 - [Serve Team Roles](serve-team-roles.md)
 - [Serve Team Development Path](serve-team-development-path.md)

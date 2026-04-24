@@ -37,5 +37,6 @@ The online campus can drift if it becomes:
 
 ## Key documents
 
+- [Online Campus Definition](online-campus-definition.md)
 - [Success Metrics](success-metrics.md)
 - [Ministry Roadmap](roadmap.md)

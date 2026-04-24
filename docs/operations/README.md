@@ -11,6 +11,7 @@ This includes everything required to prepare, deliver, and review the online min
 - Script writing and content preparation
 - Chat host scheduling and support
 - Analytics gathering and reporting
+- Budget monitoring and weekly financial review
 - Follow-up handoffs after the service
 
 ## Operational goals
@@ -23,7 +24,9 @@ This includes everything required to prepare, deliver, and review the online min
 
 ## Key documents
 
+- [Online Campus Playbook Outline](online-campus-playbook-outline.md)
 - [Weekly Checklist](weekly-checklist.md)
 - [Production Workflow](production-workflow.md)
 - [Technical Systems](technical-systems.md)
 - [Streaming Rack System](streaming-rack-system.md)
+- [Budget Monitoring](budget-monitoring.md)

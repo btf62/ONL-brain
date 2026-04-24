@@ -21,3 +21,12 @@ Agents in this repo should be:
 - Personal-support agents may read the state of the repo so they can coach in context.
 - Ministry agents may help with execution, analysis, and publishing workflows.
 - Neither category replaces pastoral authority, human judgment, or relational ministry leadership.
+
+## Current ministry agents
+
+- [Source Digest Agent](ministry/source-digest-agent.md)
+- [Online Response Queue Agent](ministry/online-response-queue-agent.md)
+- [Baptism Pipeline Agent](ministry/baptism-pipeline-agent.md)
+- [Confluence Promotion Agent](ministry/confluence-promotion-agent.md)
+- [Serve Team Roster Agent](ministry/serve-team-roster-agent.md)
+- [Budget Watch Agent](ministry/budget-watch-agent.md)

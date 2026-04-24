@@ -31,6 +31,11 @@ Agents may help with:
 - checklist or template generation
 - change detection
 - dashboard preparation
+- source-system digesting
+- online response queue review
+- baptism pipeline tracking
+- serve team roster reconciliation
+- budget watch summaries
 
 Serve team members may help with:
 
