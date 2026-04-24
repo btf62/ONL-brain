@@ -154,6 +154,33 @@ Related doc:
 
 - [Source Documents](source-documents.md)
 
+### Rock key leader and community group dashboards
+
+Likely value:
+
+- assigned key leaders Brad is responsible to contact throughout the year
+- touchpoint history for texts, calls, emails, visits, hallway conversations, coffee, meals, and other leader-care interactions
+- assigned community groups and community group leaders Brad coaches
+- evidence for leadership-care dashboards and weekly closed-list planning
+
+Current thought:
+
+- Rock should remain canonical for assignments and logged touchpoints
+- this repo should define the responsibility, dashboard questions, and coaching rhythm
+- live Rock review should be narrow and tied to a specific question or dashboard build-out
+
+Possible repo outputs:
+
+- leadership-care responsibility doc
+- key leader dashboard questions
+- community group coach dashboard questions
+- weekly or monthly leadership-care review checklist
+- small groups coach playbook summary if one exists
+
+Related doc:
+
+- [Leadership Care Responsibilities](../people/leadership-care-responsibilities.md)
+
 ### Giveaway documentation
 
 Likely value:

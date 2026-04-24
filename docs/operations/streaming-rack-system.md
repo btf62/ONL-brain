@@ -2,6 +2,10 @@
 
 Source artifact: [ONL Streaming Rack Config Summary](../archive/onl-streaming-rack-config-summary.md)
 
+Primary Drive source: [ONL Streaming Rack Config](https://docs.google.com/spreadsheets/d/1JMGN4qKNcqnHObP7pVOS4Mo8iycP0nlGi-JmXWpFFs4)
+
+Repo snapshot: [ONL-Streaming-Rack-Config.xlsx](../archive/ONL-Streaming-Rack-Config.xlsx)
+
 ## Purpose
 
 This document is the current repo-level source of truth for the online campus streaming rack topology.

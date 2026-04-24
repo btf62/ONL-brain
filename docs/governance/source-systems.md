@@ -107,6 +107,8 @@ Use for:
 
 - serve team roster lookup
 - group and group type structure
+- key leader dashboard evidence
+- community group and group leader assignments
 - connection and workflow status
 - baptism and membership pipeline records
 - ministry database evidence

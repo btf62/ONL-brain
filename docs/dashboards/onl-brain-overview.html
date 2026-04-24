@@ -1,0 +1,1047 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ONL Brain Overview</title>
+  <style>
+    :root {
+      --ink: #1e221b;
+      --muted: #5f6758;
+      --paper: #fbf5e7;
+      --paper-soft: #fffaf0;
+      --line: rgba(46, 58, 39, 0.18);
+      --line-strong: rgba(46, 58, 39, 0.28);
+      --forest: #244434;
+      --moss: #657a4f;
+      --clay: #b25f3d;
+      --sun: #e8b84d;
+      --sky: #8aa7a9;
+      --rose: #d9a097;
+      --cream: #fff8e8;
+      --shadow: 0 26px 90px rgba(38, 45, 31, 0.17);
+      --shadow-soft: 0 16px 44px rgba(38, 45, 31, 0.11);
+      --radius: 28px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 7% 8%, rgba(232, 184, 77, 0.38), transparent 29rem),
+        radial-gradient(circle at 92% 16%, rgba(138, 167, 169, 0.44), transparent 34rem),
+        radial-gradient(circle at 76% 80%, rgba(178, 95, 61, 0.18), transparent 32rem),
+        linear-gradient(135deg, #f4e7cf 0%, #fbf5e7 42%, #eef0df 100%);
+      font-family: "Avenir Next", "Gill Sans", "Trebuchet MS", sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(36, 68, 52, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(36, 68, 52, 0.045) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent 82%);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      top: 10vh;
+      right: -16rem;
+      width: 34rem;
+      height: 34rem;
+      border-radius: 43% 57% 58% 42%;
+      pointer-events: none;
+      background: linear-gradient(135deg, rgba(101, 122, 79, 0.18), rgba(232, 184, 77, 0.18));
+      filter: blur(1px);
+      animation: drift 18s ease-in-out infinite alternate;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--clay);
+    }
+
+    .shell {
+      position: relative;
+      z-index: 1;
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0 64px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+      animation: rise 520ms ease-out both;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--forest);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border-radius: 14px;
+      color: var(--cream);
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.18), transparent),
+        var(--forest);
+      box-shadow: var(--shadow-soft);
+      font-family: "Iowan Old Style", "Palatino", "Book Antiqua", serif;
+      font-size: 1.2rem;
+    }
+
+    .top-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .micro-pill {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 11px;
+      color: var(--muted);
+      background: rgba(255, 250, 240, 0.58);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      min-height: 420px;
+      align-items: stretch;
+      animation: rise 700ms ease-out both;
+    }
+
+    .hero-card,
+    .panel,
+    .domain-card,
+    .agent-card,
+    .next-card {
+      border: 1px solid var(--line);
+      background: rgba(255, 250, 240, 0.82);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 36px;
+      padding: clamp(28px, 5vw, 58px);
+      background:
+        linear-gradient(130deg, rgba(255, 250, 240, 0.95), rgba(255, 248, 232, 0.72)),
+        linear-gradient(315deg, rgba(138, 167, 169, 0.28), transparent 48%);
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(36, 68, 52, 0.1);
+      border-radius: 26px;
+      pointer-events: none;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      bottom: -120px;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: conic-gradient(from 210deg, rgba(178, 95, 61, 0.34), rgba(232, 184, 77, 0.44), rgba(36, 68, 52, 0.14), rgba(178, 95, 61, 0.34));
+      opacity: 0.8;
+      animation: turn 22s linear infinite;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 22px;
+      color: var(--forest);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 3px;
+      border-radius: 999px;
+      background: var(--clay);
+    }
+
+    .hero-card .eyebrow,
+    .hero-card h1,
+    .hero-copy,
+    .nav {
+      position: relative;
+      z-index: 2;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-family: "Iowan Old Style", "Palatino", "Book Antiqua", serif;
+      line-height: 0.96;
+      letter-spacing: -0.04em;
+    }
+
+    h1 {
+      max-width: 760px;
+      font-size: clamp(3.6rem, 9vw, 8.4rem);
+    }
+
+    h1 .wash {
+      display: inline;
+      color: transparent;
+      background: linear-gradient(95deg, var(--forest) 10%, var(--clay) 54%, #8d6d2d 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    h2 {
+      font-size: clamp(2.3rem, 5vw, 4.6rem);
+    }
+
+    h3 {
+      font-size: 1.6rem;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 1;
+      max-width: 650px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.28rem);
+      line-height: 1.6;
+    }
+
+    .side-stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .panel {
+      border-radius: var(--radius);
+      padding: 24px;
+      background:
+        linear-gradient(145deg, rgba(255, 250, 240, 0.88), rgba(255, 255, 255, 0.56));
+    }
+
+    .panel.dark {
+      color: #f8f3e7;
+      background:
+        radial-gradient(circle at 18% 8%, rgba(232, 184, 77, 0.22), transparent 14rem),
+        linear-gradient(145deg, rgba(36, 68, 52, 0.96), rgba(51, 78, 48, 0.94)),
+        var(--forest);
+    }
+
+    .panel.dark .muted,
+    .panel.dark a {
+      color: rgba(248, 243, 231, 0.82);
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .stat {
+      border-radius: 18px;
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      transition: transform 180ms ease, background 180ms ease;
+    }
+
+    .stat:hover {
+      transform: translateY(-3px) rotate(-0.4deg);
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .stat strong {
+      display: block;
+      font-family: "Iowan Old Style", "Palatino", "Book Antiqua", serif;
+      font-size: 2.4rem;
+      line-height: 1;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 6px;
+      color: rgba(248, 243, 231, 0.75);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 28px 0 0;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 10px 14px;
+      color: var(--forest);
+      background: rgba(255, 250, 240, 0.72);
+      font-size: 0.9rem;
+      font-weight: 750;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .pill:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 30px rgba(38, 45, 31, 0.1);
+      background: rgba(255, 248, 232, 0.96);
+    }
+
+    .compass {
+      position: relative;
+      display: grid;
+      min-height: 228px;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .compass::before {
+      content: "";
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      border: 1px dashed rgba(36, 68, 52, 0.25);
+      border-radius: 50%;
+      animation: turn 34s linear infinite;
+    }
+
+    .compass::after {
+      content: "";
+      position: absolute;
+      width: 126px;
+      height: 126px;
+      border-radius: 50%;
+      border: 26px solid rgba(232, 184, 77, 0.2);
+      box-shadow: inset 0 0 0 1px rgba(36, 68, 52, 0.12);
+    }
+
+    .compass-core {
+      position: relative;
+      z-index: 1;
+      width: 112px;
+      height: 112px;
+      border-radius: 34px;
+      display: grid;
+      place-items: center;
+      color: var(--cream);
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.18), transparent),
+        var(--forest);
+      box-shadow: var(--shadow-soft);
+      transform: rotate(-8deg);
+    }
+
+    .compass-core span {
+      display: block;
+      transform: rotate(8deg);
+      font-family: "Iowan Old Style", "Palatino", "Book Antiqua", serif;
+      font-size: 2.1rem;
+      letter-spacing: -0.08em;
+    }
+
+    .orbit-node {
+      position: absolute;
+      z-index: 2;
+      border-radius: 999px;
+      padding: 8px 10px;
+      color: var(--forest);
+      background: rgba(255, 250, 240, 0.9);
+      border: 1px solid var(--line-strong);
+      box-shadow: var(--shadow-soft);
+      font-size: 0.76rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .orbit-node:nth-child(2) {
+      top: 22px;
+      left: 22px;
+    }
+
+    .orbit-node:nth-child(3) {
+      top: 42px;
+      right: 12px;
+    }
+
+    .orbit-node:nth-child(4) {
+      bottom: 28px;
+      left: 42px;
+    }
+
+    .orbit-node:nth-child(5) {
+      right: 24px;
+      bottom: 20px;
+    }
+
+    section {
+      margin-top: 34px;
+      animation: rise 700ms ease-out both;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin: 58px 0 20px;
+    }
+
+    .section-head p {
+      max-width: 520px;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .domains {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .domain-card {
+      position: relative;
+      min-height: 270px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .domain-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 32px 90px rgba(38, 45, 31, 0.19);
+    }
+
+    .domain-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--accent), transparent 62%);
+      opacity: 0.18;
+    }
+
+    .domain-card::after {
+      content: "";
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      background: var(--accent);
+      opacity: 0.2;
+      transform: rotate(12deg);
+    }
+
+    .domain-card > * {
+      position: relative;
+    }
+
+    .tag {
+      display: inline-flex;
+      margin-bottom: 24px;
+      border-radius: 999px;
+      padding: 7px 11px;
+      color: var(--forest);
+      background: rgba(255, 250, 240, 0.68);
+      border: 1px solid var(--line);
+      font-size: 0.76rem;
+      font-weight: 850;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .domain-card p,
+    .agent-card p,
+    .next-card p,
+    .muted {
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .links {
+      display: grid;
+      gap: 9px;
+      margin-top: 22px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .links a {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      border-top: 1px solid var(--line);
+      padding-top: 10px;
+      font-weight: 760;
+      transition: padding-left 160ms ease, color 160ms ease;
+    }
+
+    .links a:hover {
+      padding-left: 6px;
+    }
+
+    .links a::after {
+      content: "open";
+      color: var(--clay);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .map {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 18px;
+    }
+
+    .source-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .source {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      border-radius: 18px;
+      padding: 14px 16px;
+      background: rgba(255, 255, 255, 0.42);
+      border: 1px solid var(--line);
+      transition: transform 160ms ease, background 160ms ease;
+    }
+
+    .source:hover {
+      transform: translateX(4px);
+      background: rgba(255, 255, 255, 0.58);
+    }
+
+    .source span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .agents {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .agent-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 22px;
+      padding: 20px;
+      min-height: 185px;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .agent-card::before {
+      content: "";
+      position: absolute;
+      top: -44px;
+      right: -44px;
+      width: 108px;
+      height: 108px;
+      border-radius: 50%;
+      background: rgba(138, 167, 169, 0.18);
+    }
+
+    .agent-card > * {
+      position: relative;
+    }
+
+    .agent-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 70px rgba(38, 45, 31, 0.16);
+    }
+
+    .agent-card a {
+      display: inline-flex;
+      margin-top: 14px;
+      color: var(--clay);
+      font-weight: 850;
+    }
+
+    .next-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .next-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 22px;
+      padding: 20px;
+      min-height: 170px;
+      transition: transform 180ms ease;
+    }
+
+    .next-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .number {
+      display: inline-grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      margin-bottom: 18px;
+      border-radius: 50%;
+      color: var(--paper-soft);
+      background: var(--forest);
+      font-weight: 850;
+    }
+
+    .next-card:nth-child(2) .number {
+      background: var(--clay);
+    }
+
+    .next-card:nth-child(3) .number {
+      background: var(--moss);
+    }
+
+    .next-card:nth-child(4) .number {
+      background: #725a35;
+    }
+
+    .footer {
+      margin-top: 58px;
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes turn {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes drift {
+      from {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+      }
+      to {
+        transform: translate3d(-4rem, 3rem, 0) rotate(18deg);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 1ms !important;
+        scroll-behavior: auto !important;
+        transition-duration: 1ms !important;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .map {
+        grid-template-columns: 1fr;
+      }
+
+      .domains,
+      .agents,
+      .next-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 620px) {
+      .shell {
+        width: min(100% - 22px, 1180px);
+        padding-top: 14px;
+      }
+
+      .hero-card,
+      .panel,
+      .domain-card {
+        border-radius: 22px;
+      }
+
+      .domains,
+      .agents,
+      .next-grid,
+      .stat-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head p {
+        margin-top: 12px;
+      }
+
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .top-actions {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <div class="topbar">
+      <a class="brand" href="../../README.md" aria-label="Open ONL Brain README">
+        <span class="brand-mark">O</span>
+        <span>ONL Brain</span>
+      </a>
+      <div class="top-actions" aria-label="Dashboard status">
+        <span class="micro-pill">static map</span>
+        <span class="micro-pill">read-only posture</span>
+        <span class="micro-pill">local first</span>
+      </div>
+    </div>
+
+    <header class="hero">
+      <div class="hero-card">
+        <p class="eyebrow">ONL Brain static overview</p>
+        <h1>One map for the <span class="wash">online campus</span> operating system.</h1>
+        <p class="hero-copy">
+          This repo is becoming the structured memory for vision, weekly operations, pastoral response,
+          serve teams, source systems, dashboards, and ministry agents. This page is the visual front door.
+        </p>
+        <nav class="nav" aria-label="Page sections">
+          <a class="pill" href="#domains">Domains</a>
+          <a class="pill" href="#systems">Source systems</a>
+          <a class="pill" href="#agents">Agents</a>
+          <a class="pill" href="#next">Where we are headed</a>
+        </nav>
+      </div>
+
+      <aside class="side-stack" aria-label="Repo snapshot">
+        <div class="panel dark">
+          <p class="eyebrow">Snapshot</p>
+          <div class="stat-grid">
+            <div class="stat">
+              <strong>8</strong>
+              <span>major doc areas</span>
+            </div>
+            <div class="stat">
+              <strong>6</strong>
+              <span>ministry agents</span>
+            </div>
+            <div class="stat">
+              <strong>2</strong>
+              <span>protected calendars</span>
+            </div>
+            <div class="stat">
+              <strong>1</strong>
+              <span>safety constitution</span>
+            </div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="compass" aria-label="ONL Brain map motif">
+            <div class="compass-core"><span>ONL</span></div>
+            <span class="orbit-node">Vision</span>
+            <span class="orbit-node">Care</span>
+            <span class="orbit-node">Ops</span>
+            <span class="orbit-node">Safety</span>
+          </div>
+        </div>
+      </aside>
+    </header>
+
+    <section id="domains">
+      <div class="section-head">
+        <h2>What we have built</h2>
+        <p>
+          The repo is organizing a role that has historically lived in one person’s head into a set of
+          named domains, workflows, and handoff-ready documents.
+        </p>
+      </div>
+
+      <div class="domains">
+        <article class="domain-card" style="--accent: #e8b84d;">
+          <span class="tag">Why</span>
+          <h3>Vision</h3>
+          <p>Purpose, definition, roadmap, and success metrics for online campus ministry.</p>
+          <ul class="links">
+            <li><a href="../vision/README.md">Vision overview</a></li>
+            <li><a href="../vision/online-campus-definition.md">Online campus definition</a></li>
+            <li><a href="../vision/success-metrics.md">Success metrics</a></li>
+          </ul>
+        </article>
+
+        <article class="domain-card" style="--accent: #8aa7a9;">
+          <span class="tag">How</span>
+          <h3>Operations</h3>
+          <p>Weekly rhythms, production workflows, technical systems, budgets, and repeatable checklists.</p>
+          <ul class="links">
+            <li><a href="../operations/README.md">Operations overview</a></li>
+            <li><a href="../operations/weekly-checklist.md">Weekly checklist</a></li>
+            <li><a href="../operations/streaming-rack-system.md">Streaming rack system</a></li>
+          </ul>
+        </article>
+
+        <article class="domain-card" style="--accent: #b25f3d;">
+          <span class="tag">Care</span>
+          <h3>People</h3>
+          <p>Follow-up pathways for prayer, baptism, membership, serving, groups, and online response standards.</p>
+          <ul class="links">
+            <li><a href="../people/README.md">People overview</a></li>
+            <li><a href="../people/online-community-response-standards.md">Response standards</a></li>
+            <li><a href="../people/baptism-response-workflow.md">Baptism workflow</a></li>
+          </ul>
+        </article>
+
+        <article class="domain-card" style="--accent: #657a4f;">
+          <span class="tag">Who</span>
+          <h3>Roles</h3>
+          <p>Serve teams, role maps, development paths, and current gaps across chat, tech, and admin support.</p>
+          <ul class="links">
+            <li><a href="../roles/role-map.md">Role map</a></li>
+            <li><a href="../roles/current-serve-teams.md">Current serve teams</a></li>
+            <li><a href="../roles/serve-team-roles.md">Serve team roles</a></li>
+          </ul>
+        </article>
+
+        <article class="domain-card" style="--accent: #244434;">
+          <span class="tag">Trust</span>
+          <h3>Governance</h3>
+          <p>Source-of-truth rules, access safety, Confluence boundaries, source systems, and promotion paths.</p>
+          <ul class="links">
+            <li><a href="../governance/access-and-safety.md">Access and safety</a></li>
+            <li><a href="../governance/source-systems.md">Source systems</a></li>
+            <li><a href="../governance/repo-confluence-boundary.md">Repo and Confluence boundary</a></li>
+          </ul>
+        </article>
+
+        <article class="domain-card" style="--accent: #d79559;">
+          <span class="tag">Evidence</span>
+          <h3>Archive</h3>
+          <p>Imported source artifacts and summaries, including historical maps and streaming rack knowledge.</p>
+          <ul class="links">
+            <li><a href="../archive/README.md">Archive overview</a></li>
+            <li><a href="../archive/onl-mindmup-summary.md">MindMup summary</a></li>
+            <li><a href="../archive/onl-streaming-rack-config-summary.md">Streaming rack config</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="systems">
+      <div class="section-head">
+        <h2>Source systems with guardrails</h2>
+        <p>
+          A source system can provide evidence without becoming a playground. Gmail and Calendar are especially
+          constrained: narrow reads only, no sending, no scheduling, no broad browsing.
+        </p>
+      </div>
+
+      <div class="map">
+        <article class="panel">
+          <h3>Protected access</h3>
+          <div class="source-list">
+            <div class="source">
+              <strong>Gmail</strong>
+              <span>narrow reads, never send</span>
+            </div>
+            <div class="source">
+              <strong>Google Calendar</strong>
+              <span>narrow reads, never schedule</span>
+            </div>
+            <div class="source">
+              <strong>Rock RMS</strong>
+              <span>people, rosters, workflows</span>
+            </div>
+            <div class="source">
+              <strong>Google Drive</strong>
+              <span>docs, sheets, playbooks</span>
+            </div>
+            <div class="source">
+              <strong>Confluence NOO</strong>
+              <span>team-facing promotion layer</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel dark">
+          <p class="eyebrow">Safety stance</p>
+          <h3>Access does not imply permission to browse.</h3>
+          <p class="muted">
+            The governance layer now says agents prepare, summarize, flag, and recommend. Humans decide and act.
+            This lets the repo gain useful context without turning connected systems into unattended automation.
+          </p>
+          <ul class="links">
+            <li><a href="../governance/access-and-safety.md">Read the safety constitution</a></li>
+            <li><a href="../governance/source-systems.md">See source-system boundaries</a></li>
+            <li><a href="../governance/knowledge-sources-backlog.md">Review knowledge backlog</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="agents">
+      <div class="section-head">
+        <h2>Agents we have named</h2>
+        <p>
+          These are not little gremlins with autonomy. They are defined support roles that help inspect, summarize,
+          flag risks, and prepare recommendations inside clear boundaries.
+        </p>
+      </div>
+
+      <div class="agents">
+        <article class="agent-card">
+          <h3>Source Digest</h3>
+          <p>Turns source material into proposed repo updates, archive summaries, or Confluence candidates.</p>
+          <a href="../../agents/ministry/source-digest-agent.md">Open spec</a>
+        </article>
+        <article class="agent-card">
+          <h3>Response Queue</h3>
+          <p>Helps keep prayer, baptism, membership, serving, group, and email follow-up from slipping.</p>
+          <a href="../../agents/ministry/online-response-queue-agent.md">Open spec</a>
+        </article>
+        <article class="agent-card">
+          <h3>Baptism Pipeline</h3>
+          <p>Tracks baptism inquiry/application flow and highlights next actions or stuck handoffs.</p>
+          <a href="../../agents/ministry/baptism-pipeline-agent.md">Open spec</a>
+        </article>
+        <article class="agent-card">
+          <h3>Confluence Promotion</h3>
+          <p>Identifies stable repo content that should become readable team-facing Confluence pages.</p>
+          <a href="../../agents/ministry/confluence-promotion-agent.md">Open spec</a>
+        </article>
+        <article class="agent-card">
+          <h3>Serve Team Roster</h3>
+          <p>Reconciles Rock data and ministry reality for chat host, tech, and admin serve-team health.</p>
+          <a href="../../agents/ministry/serve-team-roster-agent.md">Open spec</a>
+        </article>
+        <article class="agent-card">
+          <h3>Budget Watch</h3>
+          <p>Turns budget reports into attention flags, remaining capacity, and planning questions.</p>
+          <a href="../../agents/ministry/budget-watch-agent.md">Open spec</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="next">
+      <div class="section-head">
+        <h2>Where this is headed</h2>
+        <p>
+          The next best layer is not heavy automation. It is a rhythm surface: what needs attention, what is
+          slipping, where Brad is overloaded, and what can be delegated.
+        </p>
+      </div>
+
+      <div class="next-grid">
+        <article class="next-card">
+          <span class="number">1</span>
+          <h3>Operating rhythm</h3>
+          <p>Create the cadence doc that names daily, weekly, monthly, and seasonal responsibilities.</p>
+        </article>
+        <article class="next-card">
+          <span class="number">2</span>
+          <h3>Manual scorecard</h3>
+          <p>Start with a simple weekly health board before automating data collection.</p>
+        </article>
+        <article class="next-card">
+          <span class="number">3</span>
+          <h3>Follow-up board</h3>
+          <p>Track open prayer, baptism, membership, serving, and group follow-up against response targets.</p>
+        </article>
+        <article class="next-card">
+          <span class="number">4</span>
+          <h3>Delegation map</h3>
+          <p>Clarify what can move to chat host lead, tech lead, admin support, or future staff helpers.</p>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>
+        Static overview for ONL Brain. Keep it simple, human-readable, and safe. Automation can come after the
+        manual dashboard proves what is actually useful.
+      </p>
+    </footer>
+  </main>
+</body>
+</html>

@@ -14,11 +14,14 @@ The online campus pastor provides leadership, pastoral care, and operational ove
 - Oversee response pathways for prayer, baptism, membership, serving, and care
 - Maintain visibility into ministry metrics, stories, and follow-up health
 - Develop serve team members and delegate responsibilities where appropriate
+- Maintain assigned key leader touchpoints as part of the broader campus pastor role
+- Coach assigned community group leaders and keep those relationships from going stale
 
 ## Leadership outcomes
 
 - The online campus has clear purpose and direction
 - People are known, cared for, and invited into next steps
+- Key leaders and community group leaders experience steady pastoral presence
 - Weekend services are prepared and executed reliably
 - Roles are documented well enough for others to serve successfully
 - The ministry is not dependent on undocumented tribal knowledge
@@ -30,6 +33,8 @@ The online campus pastor provides leadership, pastoral care, and operational ove
 - Production or technical support serve team members
 - Follow-up staff or ministry partners
 - Campus or central ministry leaders
+- Assigned key leaders
+- Assigned community group leaders
 
 ## Stretch risk
 

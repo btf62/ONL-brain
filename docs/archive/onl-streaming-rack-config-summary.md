@@ -1,6 +1,20 @@
 # ONL Streaming Rack Config Summary
 
-Source file: [ONL-Streaming-Rack-Config.xlsx](ONL-Streaming-Rack-Config.xlsx)
+Archived source file: [ONL-Streaming-Rack-Config.xlsx](ONL-Streaming-Rack-Config.xlsx)
+
+Primary Drive source:
+
+- [ONL Streaming Rack Config](https://docs.google.com/spreadsheets/d/1JMGN4qKNcqnHObP7pVOS4Mo8iycP0nlGi-JmXWpFFs4)
+
+Related Drive exports:
+
+- [ONL Streaming Rack Config.xlsx](https://drive.google.com/file/d/1nmBs53w0qfgtp_mGyT20JPO5HeancJ4L)
+- [ONL Streaming Rack Config.xlsx](https://drive.google.com/file/d/1Cg5j7nFk5VwXBcdZ_BSizwSKJhxzXpuP)
+
+Repo note:
+
+- The Google Sheet is the likely living source.
+- The archived workbook is a repo snapshot used for this summary and the current streaming rack documentation.
 
 ## What this is
 

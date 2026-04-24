@@ -33,6 +33,8 @@ The online campus pastor role currently appears to combine several distinct hats
 - Follow-up owner
 - Prayer and care responder
 - Connection pipeline manager
+- Key leader care owner
+- Community group coach
 
 ## What this role map is for
 

@@ -9,6 +9,8 @@ Use this list to capture dashboards or reports worth building later.
 - Online response SLA dashboard for first-response and overdue items
 - Serve team scheduling and coverage board
 - Weekend readiness board with checklist completion status
+- Key leader touchpoint dashboard, likely sourced from Rock
+- Community group coach dashboard for assigned leaders and touchpoint freshness
 
 ## Medium-priority ideas
 
@@ -17,6 +19,7 @@ Use this list to capture dashboards or reports worth building later.
 - Follow-up aging dashboard
 - Budget health dashboard
 - Role ownership dashboard
+- Leadership care dashboard
 
 ## Questions each dashboard should answer
 
@@ -24,3 +27,5 @@ Use this list to capture dashboards or reports worth building later.
 - What is improving?
 - What is slipping?
 - Where is one person carrying too much?
+- Which leaders have not received a meaningful touchpoint recently?
+- What pastoral care should move from vague guilt to a specific next action?
