@@ -1,0 +1,23 @@
+# Agents Overview
+
+This folder contains agent definitions and related support documents for systems that help operate inside this repo.
+
+## Purpose
+
+Agents in this repo should be:
+
+- context-aware
+- clearly scoped
+- named according to their role
+- separated from human serve team roles
+
+## Agent categories
+
+- `personal/`: agents that support the online campus pastor's effectiveness, reflection, prioritization, and self-management
+- `ministry/`: agents that support ministry operations, documentation, dashboards, publishing, and follow-up workflows
+
+## Notes
+
+- Personal-support agents may read the state of the repo so they can coach in context.
+- Ministry agents may help with execution, analysis, and publishing workflows.
+- Neither category replaces pastoral authority, human judgment, or relational ministry leadership.
