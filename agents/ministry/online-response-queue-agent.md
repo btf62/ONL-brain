@@ -8,6 +8,7 @@ Monitor online campus response queues so prayer requests, baptism interest, memb
 
 - [Online Community Response Standards](../../docs/people/online-community-response-standards.md)
 - [Connection Pipelines](../../docs/people/connection-pipelines.md)
+- [Source Systems](../../docs/governance/source-systems.md)
 - Rock workflows, connection requests, or reports
 - email or Gemini digests provided by the user
 - form exports from `iwant.info`, Typeform, or legacy forms
@@ -40,6 +41,10 @@ Monitor online campus response queues so prayer requests, baptism interest, memb
 ## Boundaries
 
 - Do not send pastoral responses automatically unless a human explicitly approves the specific message.
+- Never send email through Gmail or any other email tool.
+- Prepare email draft copy only when explicitly requested, and leave it for human review.
+- Do not run broad Gmail searches unless the user specifically asks for one.
+- Keep Gmail searches and reads narrow to the current pathway, person, date range, sender, label, or digest request.
 - Do not make crisis-care decisions independently.
 - Do not expose private prayer content in summaries unless required for pastoral action.
 - Do not assume an email, form, or Rock item has been handled just because it exists in one system.

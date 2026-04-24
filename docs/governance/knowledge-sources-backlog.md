@@ -4,6 +4,8 @@ This document captures possible source systems and archives that may contain use
 
 The goal is not to ingest everything immediately. The goal is to remember where important knowledge may live, decide what kind of digest would be useful, and route durable operating knowledge into the right part of the repo.
 
+For source-system vocabulary and categories, see [Source Systems](source-systems.md).
+
 ## Source systems to consider
 
 ### Google Drive: Northridge files
@@ -94,6 +96,7 @@ Current thought:
 - direct email ingestion should be cautious because email contains private, sensitive, and noisy material
 - a separate tool, such as Gemini, could create targeted digests for review before anything enters this repo
 - only durable process knowledge should be copied into the repo
+- Gmail access must follow the narrow-search, narrow-read, never-send rules in [Source Systems](source-systems.md)
 
 Possible repo outputs:
 
@@ -101,6 +104,29 @@ Possible repo outputs:
 - admin support role description
 - recurring communication templates
 - list of source emails or date ranges reviewed, without private email content
+
+### Google Calendar
+
+Likely value:
+
+- recurring staff and online campus rhythms
+- staff travel constraints
+- weekly and seasonal planning context
+- evidence for dashboard cadence and operating-rhythm design
+
+Current thought:
+
+- calendar access should be read-only and only used for specific user-requested questions
+- the two likely relevant calendars are `Staff Travel/Vacation Schedule` and Brad's primary work calendar, `bfiles@northridgerochester.com`
+- calendar data may inform cadence docs, but should not become canonical process documentation by itself
+- Google Calendar access must follow the narrow-read, no-scheduling, no-modification rules in [Source Systems](source-systems.md)
+
+Possible repo outputs:
+
+- operating rhythm summary
+- dashboard cadence notes
+- recurring meeting or planning-pattern inventory
+- list of date ranges reviewed, without unnecessary event details
 
 ### Shared drives and team documentation
 

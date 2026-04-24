@@ -19,6 +19,9 @@ They do not replace pastoral judgment, staff ownership, or serve team responsibi
 
 - Read the relevant repo docs before making recommendations.
 - Prefer source-system evidence over memory.
+- Follow [Access and Safety](../../docs/governance/access-and-safety.md).
+- Follow [Source Systems](../../docs/governance/source-systems.md) boundaries, especially Gmail and Google Calendar access limits.
 - Distinguish current source data from current ministry reality when they differ.
 - Never expose sensitive pastoral, financial, or personal details unnecessarily.
 - Recommend and prepare; humans decide and act.
+- Never send email, schedule calendar events, or modify calendar items.

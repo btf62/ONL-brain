@@ -4,6 +4,8 @@ This document tracks external source documents that may shape this repo.
 
 The repo should summarize durable operating knowledge from these sources without silently replacing the external document if that document remains canonical elsewhere.
 
+For the broader map of tools, databases, repositories, and queues, see [Source Systems](source-systems.md).
+
 ## Google Drive documents found
 
 ### Campus Pastor Responsibilities (2024)

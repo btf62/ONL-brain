@@ -6,6 +6,7 @@ Review external source material and propose what should become repo documentatio
 
 ## Primary inputs
 
+- [Source Systems](../../docs/governance/source-systems.md)
 - Google Drive docs, sheets, PDFs, and shared-drive files
 - Confluence pages in `Northridge ONL Operations`
 - Rock data or reports surfaced through Rock Agent
@@ -30,7 +31,11 @@ Review external source material and propose what should become repo documentatio
 ## Boundaries
 
 - Do not import large source collections without a clear purpose.
+- Do not run broad Gmail searches unless the user specifically asks for one.
+- Keep Gmail searches and reads narrow to the current source question, topic, sender, date range, label, or digest request.
 - Do not copy sensitive email or pastoral content into the repo.
+- Never send email through Gmail or any other email tool.
+- Prepare email draft copy only when explicitly requested, and leave it for human review.
 - Do not treat rough source material as approved operating policy.
 - Do not replace a canonical external document unless the user explicitly decides the repo should become canonical.
 
