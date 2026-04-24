@@ -31,6 +31,8 @@ The long-term goal is to make this repository useful in four ways:
 
 ## How to use this repo
 
+For a new Codex session, start with [Agent Instructions](AGENTS.md) and [Session Handoff](HANDOFF.md). They name the restore prompt, safety boundaries, and first files to read.
+
 Start with the overview docs:
 
 1. Read [Vision Overview](docs/vision/README.md)
