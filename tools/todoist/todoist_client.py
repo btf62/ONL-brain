@@ -4,7 +4,7 @@ from typing import Any, Optional
 from urllib import error, parse, request
 
 
-API_BASE_URL = "https://api.todoist.com/rest/v2"
+API_BASE_URL = "https://api.todoist.com/api/v1"
 
 
 class TodoistError(RuntimeError):
@@ -67,14 +67,45 @@ class TodoistClient:
             return None
         return json.loads(body)
 
+    def _request_all(
+        self,
+        path: str,
+        *,
+        query: Optional[dict[str, Any]] = None,
+    ) -> list[dict[str, Any]]:
+        records: list[dict[str, Any]] = []
+        cursor: Optional[str] = None
+
+        while True:
+            page_query = dict(query or {})
+            page_query["limit"] = 200
+            if cursor:
+                page_query["cursor"] = cursor
+
+            response = self._request("GET", path, query=page_query)
+            if isinstance(response, list):
+                return records + response
+
+            if not isinstance(response, dict) or "results" not in response:
+                raise TodoistError(f"Unexpected Todoist paginated response for {path}")
+
+            results = response.get("results") or []
+            if not isinstance(results, list):
+                raise TodoistError(f"Unexpected Todoist results response for {path}")
+            records.extend(results)
+
+            cursor = response.get("next_cursor")
+            if not cursor:
+                return records
+
     def get_tasks(self) -> list[dict[str, Any]]:
-        return self._request("GET", "/tasks")
+        return self._request_all("/tasks")
 
     def get_projects(self) -> list[dict[str, Any]]:
-        return self._request("GET", "/projects")
+        return self._request_all("/projects")
 
     def get_sections(self) -> list[dict[str, Any]]:
-        return self._request("GET", "/sections")
+        return self._request_all("/sections")
 
     def get_task(self, task_id: str) -> dict[str, Any]:
         return self._request("GET", f"/tasks/{task_id}")

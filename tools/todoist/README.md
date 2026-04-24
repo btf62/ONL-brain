@@ -8,6 +8,8 @@ This folder contains a small Todoist CLI based on the patterns in the older stan
 - Shares one client instead of repeating API logic across scripts
 - Drops the `pandas` dependency and exports plain CSV
 - Adds create and inspect commands alongside export and priority updates
+- Uses the current Todoist API v1 endpoint and paginated responses
+- Exports Todoist UI priority labels so API priority `4` is shown as `P1`
 
 ## Setup
 
@@ -66,6 +68,8 @@ python3 tools/todoist/todoist_cli.py update-priority 1 2
 
 ## Notes
 
-- Priority values are passed through directly to the Todoist REST API.
+- Treat Todoist as read-only unless Brad explicitly requests a specific write.
+- Todoist API priorities are inverted from the UI labels: API `4` is `P1` highest, `3` is `P2`, `2` is `P3`, and `1` is `P4` lowest.
+- Write commands pass priority values through directly to the Todoist REST API.
 - The export currently targets active tasks, matching the older scripts.
 - If we want to grow this further, the next sensible additions are project listing, section listing, and task completion or close-out commands.

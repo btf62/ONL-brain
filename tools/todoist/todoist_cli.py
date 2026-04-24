@@ -15,6 +15,7 @@ EXPORT_FIELDNAMES = [
     "Created At",
     "Completed At",
     "Priority",
+    "Todoist Priority",
     "Project ID",
     "Project Name",
     "Project Parent ID",
@@ -31,6 +32,16 @@ EXPORT_FIELDNAMES = [
     "Task Comment Count",
     "Task Recurrence",
 ]
+
+
+def todoist_priority_label(api_priority: Any) -> str:
+    # Todoist's API uses 4 for the client-facing P1 / highest priority.
+    return {
+        4: "P1",
+        3: "P2",
+        2: "P3",
+        1: "P4",
+    }.get(api_priority, "")
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -106,9 +117,10 @@ def build_export_rows(
                 "Due Time": task.get("due", {}).get("datetime", "")
                 if task.get("due")
                 else "",
-                "Created At": task.get("created_at", ""),
+                "Created At": task.get("created_at") or task.get("added_at", ""),
                 "Completed At": "",
                 "Priority": task.get("priority", ""),
+                "Todoist Priority": todoist_priority_label(task.get("priority")),
                 "Project ID": task.get("project_id", ""),
                 "Project Name": project.get("name", ""),
                 "Project Parent ID": project_parent_id,
@@ -128,7 +140,7 @@ def build_export_rows(
                 if task.get("section_id")
                 else "",
                 "Completed Status": task.get("is_completed", False),
-                "Task Comment Count": task.get("comment_count", ""),
+                "Task Comment Count": task.get("comment_count", task.get("note_count", "")),
                 "Task Recurrence": task.get("due", {}).get("recurring", False)
                 if task.get("due")
                 else "",
