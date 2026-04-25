@@ -10,7 +10,7 @@ The goal is repo awareness, not repo consolidation.
 
 Local path:
 
-- `/Users/bradfiles/Documents/Development/rock-agent`
+- `/Users/bradfiles/Code/rock-agent`
 
 Purpose:
 
@@ -33,7 +33,7 @@ Use when:
 
 Local path:
 
-- `/Users/bradfiles/Documents/Development/script-brain`
+- `/Users/bradfiles/Code/script-brain`
 
 Purpose:
 
@@ -57,7 +57,7 @@ Use when:
 
 Local path:
 
-- `/Users/bradfiles/Documents/Development/Rock-Workbench`
+- `/Users/bradfiles/Code/Rock-Workbench`
 
 GitHub repository name:
 

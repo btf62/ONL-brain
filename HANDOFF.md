@@ -13,13 +13,13 @@ Read HANDOFF.md before doing any work, then follow it.
 Suggested prompt:
 
 ```text
-We are in /Users/bradfiles/Documents/Development/ONL-brain. Read AGENTS.md, README.md, and HANDOFF.md first, then follow the linked overview/governance docs before doing any work. Pay special attention to access-and-safety.md, source-systems.md, agents/README.md, and the active workspace/tool READMEs.
+We are in /Users/bradfiles/Code/ONL-brain. Read AGENTS.md, README.md, and HANDOFF.md first, then follow the linked overview/governance docs before doing any work. Pay special attention to access-and-safety.md, source-systems.md, agents/README.md, and the active workspace/tool READMEs.
 ```
 
 Short VS Code/Codex prompt:
 
 ```text
-We are in /Users/bradfiles/Documents/Development/ONL-brain. Read AGENTS.md, README.md, and HANDOFF.md before doing any work, then follow any linked safety and governance docs relevant to the task.
+We are in /Users/bradfiles/Code/ONL-brain. Read AGENTS.md, README.md, and HANDOFF.md before doing any work, then follow any linked safety and governance docs relevant to the task.
 ```
 
 If the task involves sensitive systems, also say:
