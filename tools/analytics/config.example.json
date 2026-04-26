@@ -1,0 +1,30 @@
+{
+  "report_recipient": "jennie.miller@northridgerochester.com",
+  "sources": {
+    "church_online_platform": {
+      "collection_method": "manual_ui",
+      "admin_url": "",
+      "notes": "Use Church Online Platform Admin analytics. No public reporting API confirmed."
+    },
+    "resi": {
+      "collection_method": "manual_export",
+      "studio_url": "https://studio.resi.io",
+      "notes": "Use Resi analytics export first. Public analytics API not confirmed."
+    },
+    "youtube": {
+      "collection_method": "api_candidate",
+      "channel_id": "",
+      "oauth_scope": "https://www.googleapis.com/auth/yt-analytics.readonly",
+      "notes": "Use YouTube Analytics API after OAuth setup."
+    },
+    "facebook": {
+      "collection_method": "manual_or_api_candidate",
+      "page_id": "",
+      "notes": "Use Resi social analytics or Meta Business Suite first; Graph API depends on Page permissions."
+    },
+    "app_tv": {
+      "collection_method": "unknown",
+      "notes": "Verify whether app, Apple TV, and Roku views are counted by Resi or another source."
+    }
+  }
+}

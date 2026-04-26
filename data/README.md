@@ -8,6 +8,7 @@ The first goal is not sophistication. The goal is consistency.
 
 - `weekly-scorecard.csv`: one row per ministry week
 - `follow-up-pipeline.csv`: one row per follow-up item or person response
+- `online-analytics/`: structured weekly source records for online analytics reporting
 
 ## Suggested use
 

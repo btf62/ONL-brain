@@ -42,6 +42,8 @@ Read in this order:
 8. [Dashboards Overview](docs/dashboards/README.md)
 9. [360 Reviews Workspace](docs/workspaces/360-reviews/README.md)
 10. [Todoist Toolkit](tools/todoist/README.md)
+11. [Online Analytics Reporting](docs/operations/analytics-reporting.md)
+12. [Online Analytics Toolkit](tools/analytics/README.md)
 
 Then read the area-specific docs for the task at hand.
 
@@ -67,8 +69,38 @@ The repo is not meant to replace Rock RMS, Google Drive, Gmail, Google Calendar,
 - `docs/dashboards/onl-brain-overview.html` gives a visual overview of the scope of work.
 - `docs/workspaces/360-reviews/` documents the public 360 workflow; private archive content stays ignored.
 - `tools/todoist/` contains the Todoist CLI and client.
+- `docs/operations/analytics-reporting.md` defines the weekly online analytics reporting responsibility for numbers sent to `jennie.miller@northridgerochester.com`.
+- `docs/dashboards/online-analytics-metrics.md` defines the first-pass metric model for Church Online Platform, Resi, YouTube, Facebook, and app/TV analytics.
+- `tools/analytics/` contains the starter online analytics CLI for creating, validating, and summarizing weekly JSON records.
 - `agents/personal/cbt-coach.md` defines the personal effectiveness support posture.
 - `agents/ministry/` defines task-specific ministry support agents.
+
+## Current stopping point: online analytics
+
+An online analytics reporting domain has been added but not yet run against a real week.
+
+Current shape:
+
+- [Online Analytics Reporting](docs/operations/analytics-reporting.md) names the responsibility, weekly workflow, source map, Jennie reporting boundary, and automation roadmap.
+- [Online Analytics Metrics](docs/dashboards/online-analytics-metrics.md) defines source metrics, normalized weekly fields, confidence levels, and data-quality flags.
+- [Online Analytics Reporting Agent](agents/ministry/online-analytics-reporting-agent.md) defines the agent role that prepares analytics summaries without sending email.
+- [Online Analytics Toolkit](tools/analytics/README.md) and `tools/analytics/analytics_cli.py` create weekly JSON records, validate missing data, and print a draft report.
+- [Source Systems](docs/governance/source-systems.md) now includes Church Online Platform, Resi, YouTube, Facebook/Meta, and Triumph/app/TV boundaries.
+
+Key vendor findings from public docs:
+
+- Church Online Platform has admin analytics for attendance, unique viewers, peak concurrent, chat, prayer, and Moments, but no public reporting API has been confirmed.
+- Resi publicly documents analytics, exports, Facebook social analytics, and a Go Live API; public analytics API access has not been confirmed.
+- YouTube is the strongest first API candidate through the official YouTube Analytics API using read-only OAuth scopes.
+- Facebook/Meta may be possible through Page/Business Suite or Graph API, but permissions and Page/video/live metric definitions need careful testing.
+
+Recommended next session:
+
+1. Ask Brad what exact fields Jennie currently expects and what deadline/channel she uses.
+2. Create one real weekly analytics JSON record with `python3 tools/analytics/analytics_cli.py new-week --week-start YYYY-MM-DD --output data/online-analytics/YYYY-MM-DD.json`.
+3. Manually collect one week from Church Online Platform, Resi, YouTube, and Facebook/app sources as available.
+4. Run `validate` and `summarize`; use the missing-source warnings to decide which source should be automated first.
+5. Most likely first automation: YouTube Analytics read-only connector; likely second: Resi export parser.
 
 ## Context caveat
 

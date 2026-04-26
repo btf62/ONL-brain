@@ -30,3 +30,4 @@ Agents in this repo should be:
 - [Confluence Promotion Agent](ministry/confluence-promotion-agent.md)
 - [Serve Team Roster Agent](ministry/serve-team-roster-agent.md)
 - [Budget Watch Agent](ministry/budget-watch-agent.md)
+- [Online Analytics Reporting Agent](ministry/online-analytics-reporting-agent.md)

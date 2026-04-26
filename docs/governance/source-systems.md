@@ -142,6 +142,138 @@ Do not use for:
 - replacing Rock RMS as the canonical database
 - making live mutations without explicit approval and guardrails
 
+### Church Online Platform
+
+Role:
+
+- canonical online service environment for Church Online Platform attendance, chat, prayer, and Moment engagement
+
+Use for:
+
+- weekly online service attendance within the Church Online Platform experience
+- unique viewers or attenders
+- peak concurrent attenders
+- public chat participants and messages
+- live prayer sessions and prayer requests
+- Moment impressions and interactions
+
+Access rules:
+
+- use narrow reads tied to the weekly analytics reporting task
+- prefer summarized weekly metrics over raw transcript or attender detail
+- do not copy chat transcripts, prayer content, or unnecessary personal details into the repo
+
+Do not use for:
+
+- total cross-platform online attendance unless the stream distribution and deduplication method is documented
+- raw pastoral-content storage
+- replacing Rock RMS for follow-up records
+
+Note:
+
+- public support documentation describes admin analytics, but a public reporting API has not yet been confirmed
+
+### Resi
+
+Role:
+
+- streaming provider and analytics source for live, on-demand, and destination-level stream performance
+
+Use for:
+
+- stream-delivery analytics
+- live and on-demand viewer data
+- watch time, viewer breakdown, geography, and device data when available
+- export-based weekly analytics reporting
+- confirming whether Church Online Platform, mobile app, Apple TV, Roku, YouTube, or Facebook destinations are included in a given report
+
+Access rules:
+
+- use read-only analytics views or exports unless Brad explicitly approves a production-control action
+- do not store credentials, API keys, cookies, or raw exports with unnecessary account details in the repo
+- keep production-control automation separate from analytics reporting
+
+Do not use for:
+
+- claiming total people reached unless destination coverage and duplicate counting are understood
+- modifying stream schedules, destinations, or Go Live state without explicit approval
+
+Note:
+
+- Resi publicly documents analytics exports and a Go Live API; a public analytics API has not yet been confirmed
+
+### YouTube
+
+Role:
+
+- canonical source for YouTube-native channel and video analytics
+
+Use for:
+
+- YouTube views
+- watch time
+- average view duration
+- livestream concurrent viewer metrics when available
+- YouTube-specific engagement metrics
+
+Access rules:
+
+- use read-only OAuth scopes for API work
+- do not modify channel content, metadata, playlists, livestream settings, comments, or community posts from this repo
+- store OAuth credentials outside the repo
+
+Do not use for:
+
+- measuring Church Online Platform, Resi player, app, Apple TV, Roku, or Facebook viewing
+- publishing or modifying YouTube content unless a separate explicit workflow is approved
+
+### Facebook / Meta
+
+Role:
+
+- source system for Facebook Page and Facebook Live analytics when those numbers are not already captured through Resi
+
+Use for:
+
+- Facebook Page video or live-video performance
+- views, minutes viewed, reactions, comments, shares, and other Meta Business Suite metrics when needed for weekly reporting
+
+Access rules:
+
+- use read-only Page or Business Suite analytics
+- keep Graph API access limited to the approved Page, date range, and metric list
+- do not publish, delete, edit, boost, comment, reply, or message through Facebook tools
+
+Do not use for:
+
+- total online attendance without clear metric definitions
+- private profile analytics
+- pastoral follow-up storage
+
+Note:
+
+- API automation may require Page permissions and careful distinction between Page insights, post insights, video insights, and live-video metrics
+
+### Triumph / Rock-Powered App and TV Apps
+
+Role:
+
+- app and connected-TV viewing surface for Northridge online content
+
+Use for:
+
+- mobile app, Apple TV, and Roku viewing analytics if those metrics are exposed by Triumph, Rock, Resi, or another approved source
+
+Access rules:
+
+- identify the canonical analytics source before importing or reporting app and TV numbers
+- use summarized weekly counts rather than raw user-level data
+
+Do not use for:
+
+- assuming app and TV views are included in Resi until verified
+- storing private device or user-level analytics in the repo
+
 ### Rock Learn / Staff Training
 
 Role:

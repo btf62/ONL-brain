@@ -14,6 +14,7 @@ They do not replace pastoral judgment, staff ownership, or serve team responsibi
 - [Confluence Promotion Agent](confluence-promotion-agent.md)
 - [Serve Team Roster Agent](serve-team-roster-agent.md)
 - [Budget Watch Agent](budget-watch-agent.md)
+- [Online Analytics Reporting Agent](online-analytics-reporting-agent.md)
 
 ## Shared operating rules
 

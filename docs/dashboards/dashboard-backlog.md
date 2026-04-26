@@ -5,6 +5,7 @@ Use this list to capture dashboards or reports worth building later.
 ## High-priority dashboard ideas
 
 - Weekly scorecard with numbers plus ministry story summary
+- Online analytics reporting dashboard for Church Online Platform, Resi, YouTube, Facebook, and app/TV sources
 - Open follow-up dashboard for baptism, membership, prayer, and serving
 - Online response SLA dashboard for first-response and overdue items
 - Serve team scheduling and coverage board

@@ -124,6 +124,60 @@ Likely repo outputs:
 - refined Rock pipeline/status documentation
 - clarified online-campus first-response ownership
 
+## Public vendor references checked
+
+### Church Online Platform Analytics
+
+URL:
+
+- `https://support.online.church/l/en/article/abqorbtzx6-overview-analytics`
+
+Why it matters:
+
+- defines Church Online Platform admin analytics such as attendance, unique viewers, peak concurrent attenders, chat participation, prayer sessions, and Moment engagement
+- clarifies that Church Online Platform analytics are platform-attender metrics rather than general streaming-provider views
+
+Likely repo outputs:
+
+- [Online Analytics Reporting](../operations/analytics-reporting.md)
+- [Online Analytics Metrics](../dashboards/online-analytics-metrics.md)
+
+### Resi Analytics and Go Live API
+
+URLs:
+
+- `https://resi.io/features/analytics/`
+- `https://resi.io/go-live-api/`
+
+Why it matters:
+
+- documents Resi's analytics, exports, live/on-demand reporting, social analytics, and destination-level stream context
+- confirms a public Go Live API exists for production control, while analytics automation still needs verification
+
+Likely repo outputs:
+
+- Resi source-system boundary
+- analytics export workflow
+- future API investigation task
+
+### YouTube Analytics API
+
+URLs:
+
+- `https://developers.google.com/youtube/analytics/`
+- `https://developers.google.com/youtube/analytics/reference/reports/query`
+- `https://developers.google.com/youtube/analytics/metrics`
+
+Why it matters:
+
+- confirms YouTube has an official Analytics API for targeted reports
+- identifies read-only reporting scopes and metrics such as views, watch time, average view duration, and livestream concurrent viewer metrics
+
+Likely repo outputs:
+
+- future YouTube read-only connector in `tools/analytics/`
+- normalized YouTube fields in [Online Analytics Metrics](../dashboards/online-analytics-metrics.md)
+
 ## Confluence spaces found
 
 ### Northridge ONL Operations

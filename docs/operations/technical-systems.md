@@ -49,4 +49,4 @@ Likely next pages after the rack document:
 - streaming platform configuration
 - chat and moderation platform setup
 - Rock RMS workflows tied to online ministry follow-up
-- analytics and scorecard data sources
+- analytics and scorecard data sources, starting with [Online Analytics Reporting](analytics-reporting.md)

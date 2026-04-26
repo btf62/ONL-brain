@@ -40,7 +40,7 @@ Use this checklist to run the recurring weekly work of the online campus.
 - Enter or verify follow-up items in Rock RMS
 - Route prayer, care, baptism, membership, and serving responses appropriately
 - Debrief issues, wins, and notable stories
-- Gather core analytics and update the weekly scorecard
+- Gather core analytics using [Online Analytics Reporting](analytics-reporting.md) and update the weekly scorecard
 
 ## Weekly review
 

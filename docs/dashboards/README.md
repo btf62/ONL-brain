@@ -19,4 +19,5 @@ Dashboards should eventually make it easy to answer a few simple questions:
 - [ONL Brain Overview](onl-brain-overview.html)
 - [Repo Map](repo-map.html)
 - [Metrics Framework](metrics-framework.md)
+- [Online Analytics Metrics](online-analytics-metrics.md)
 - [Dashboard Backlog](dashboard-backlog.md)
