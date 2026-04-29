@@ -14,6 +14,7 @@ Use this checklist to run the recurring weekly work of the online campus.
 ## Midweek
 
 - Finalize scripts for online-only segments and announcements
+- Protect Thursday 10:00 AM to noon for the [Thursday Online Service Prep Rhythm](thursday-online-service-prep-rhythm.md)
 - Verify media assets, lower thirds, links, and forms
 - Confirm Rock RMS pathways for expected responses
 - Prepare host notes, talking points, and escalation instructions

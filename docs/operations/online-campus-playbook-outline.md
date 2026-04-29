@@ -25,6 +25,7 @@ The playbook should become the readable operating guide for how the online campu
 ### 2. Weekly service rhythm
 
 - early-week planning
+- Thursday 10:00 AM to noon online service prep rhythm
 - scriptwriting and talking points
 - service readiness
 - chat host readiness

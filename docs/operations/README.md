@@ -28,6 +28,7 @@ This includes everything required to prepare, deliver, and review the online min
 - [Online Campus Playbook Outline](online-campus-playbook-outline.md)
 - [Weekly Checklist](weekly-checklist.md)
 - [Production Workflow](production-workflow.md)
+- [Thursday Online Service Prep Rhythm](thursday-online-service-prep-rhythm.md)
 - [Technical Systems](technical-systems.md)
 - [Streaming Rack System](streaming-rack-system.md)
 - [Church Online Chat Transcript Archive](church-online-chat-transcript-archive.md)

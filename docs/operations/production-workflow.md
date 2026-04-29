@@ -15,6 +15,7 @@ This document describes the repeatable flow for preparing and delivering the onl
 - Graphics and lower thirds
 - Links and QR destinations
 - Chat prompts and host notes
+- Thursday online-service prep, including ScriptBrain writing room, orders of service, studio copy, and ProPresenter updates; see [Thursday Online Service Prep Rhythm](thursday-online-service-prep-rhythm.md)
 
 ## 3. Staff the service
 
