@@ -52,9 +52,10 @@ Use for:
 
 Current automation posture:
 
-- Manual export first.
-- Resi publicly documents analytics and exports.
-- Resi publicly documents a Go Live API, but a public analytics API has not yet been confirmed.
+- Manual UI or export first.
+- A dedicated Resi API client has been proven against the public OAuth and On Demand API surface.
+- The public OpenAPI spec exposes OAuth, On Demand, Go Live schedules, encoders, and destination groups, but no analytics endpoints have been found.
+- Do not treat Resi analytics as `confirmed_api` unless Resi/Pushpay confirms an official analytics API role or endpoint.
 - Verify whether Resi analytics includes Church Online Platform, Triumph mobile app, Apple TV, Roku, and other destinations that use the same Resi stream URL.
 
 ### YouTube
@@ -192,7 +193,7 @@ Do not store:
 
 - Add a YouTube Analytics read-only connector.
 - Investigate whether Church Online Platform has a private or partner API.
-- Investigate whether Resi analytics can be exported programmatically.
+- Ask Resi/Pushpay whether API clients can access Studio analytics or analytics exports; the confirmed public Resi API currently appears limited to metadata/control surfaces.
 - Test Meta Graph API only after Page permissions and metric definitions are clear.
 
 ### Stage 4: Reviewed Automation
@@ -211,10 +212,12 @@ Do not store:
 - Does Resi include YouTube and Facebook social destinations in the same export, or should those remain separate?
 - Which number should leadership treat as the headline online attendance number?
 - Should on-demand views be included in the weekly attendance report or tracked separately?
+- Does Pushpay/Resi offer an official API role or endpoint for Studio analytics, KPI, or content-library export data?
 
 ## Related Files
 
 - [Online Analytics Metrics](../dashboards/online-analytics-metrics.md)
+- [Resi API Investigation](resi-api-investigation.md)
 - [Success Metrics](../vision/success-metrics.md)
 - [Weekly Checklist](weekly-checklist.md)
 - [Technical Systems](technical-systems.md)

@@ -28,6 +28,7 @@ Agents in this repo should be:
 - [Online Response Queue Agent](ministry/online-response-queue-agent.md)
 - [Baptism Pipeline Agent](ministry/baptism-pipeline-agent.md)
 - [Confluence Promotion Agent](ministry/confluence-promotion-agent.md)
+- [Repo Steward Agent](ministry/repo-steward-agent.md)
 - [Serve Team Roster Agent](ministry/serve-team-roster-agent.md)
 - [Budget Watch Agent](ministry/budget-watch-agent.md)
 - [Online Analytics Reporting Agent](ministry/online-analytics-reporting-agent.md)

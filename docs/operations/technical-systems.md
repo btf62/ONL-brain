@@ -16,8 +16,9 @@ This document should become the source of truth for the tools and systems used t
 ## Current documented system page
 
 - [Streaming Rack System](streaming-rack-system.md)
+- [Group Finder Summer Groups Filter](group-finder-summer-groups-filter.md)
 
-This is the first detailed technical-system page in the repo and is based on the archived rack workbook in `docs/archive/`.
+The rack document is based on the archived rack workbook in `docs/archive/`. The group finder note captures a recurring Rock RMS configuration procedure.
 
 ## For each system, document
 

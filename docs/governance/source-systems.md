@@ -200,7 +200,10 @@ Do not use for:
 
 Note:
 
-- Resi publicly documents analytics exports and a Go Live API; a public analytics API has not yet been confirmed
+- A dedicated API client has been proven against the public Resi OAuth and On Demand API.
+- The public OpenAPI spec does not currently expose analytics, KPI, viewer, watch-time, or export endpoints.
+- Treat Resi analytics as manual UI or export-based until Resi/Pushpay confirms an official analytics API.
+- See [Resi API Investigation](../operations/resi-api-investigation.md).
 
 ### YouTube
 

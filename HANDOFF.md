@@ -43,7 +43,8 @@ Read in this order:
 9. [360 Reviews Workspace](docs/workspaces/360-reviews/README.md)
 10. [Todoist Toolkit](tools/todoist/README.md)
 11. [Online Analytics Reporting](docs/operations/analytics-reporting.md)
-12. [Online Analytics Toolkit](tools/analytics/README.md)
+12. [Resi API Investigation](docs/operations/resi-api-investigation.md)
+13. [Online Analytics Toolkit](tools/analytics/README.md)
 
 Then read the area-specific docs for the task at hand.
 
@@ -90,7 +91,11 @@ Current shape:
 Key vendor findings from public docs:
 
 - Church Online Platform has admin analytics for attendance, unique viewers, peak concurrent, chat, prayer, and Moments, but no public reporting API has been confirmed.
-- Resi publicly documents analytics, exports, Facebook social analytics, and a Go Live API; public analytics API access has not been confirmed.
+- Resi API access has been proven for the public OAuth and On Demand API surface using the dedicated `ONL Analytics Reporting - Read Only` API client.
+- Resi's public OpenAPI spec exposes OAuth, On Demand playlists/videos, Go Live schedules, encoders, and destination groups, but no analytics/KPI/viewer/watch-time/export endpoints were found.
+- The Resi Studio analytics page uses internal `telemetry.resi.io` routes for KPI and statistics data, including `views`, `uniqueViewers`, `newViewers`, `returnViewers`, `totalTimeWatched`, `avgWatchTime`, `medianWatchTime`, `peakConcurrentViewers`, and city/location breakdowns.
+- Studio telemetry requests use filters such as `destinationType=embed` and `destinationType=stream_url`, which may matter when separating Embed Player, Stream URL, and Facebook numbers.
+- Resi analytics likely remains manual UI or export-based unless Resi/Pushpay confirms an official analytics API role or endpoint; see [Resi API Investigation](docs/operations/resi-api-investigation.md).
 - YouTube is the strongest first API candidate through the official YouTube Analytics API using read-only OAuth scopes.
 - Facebook/Meta may be possible through Page/Business Suite or Graph API, but permissions and Page/video/live metric definitions need careful testing.
 
@@ -100,7 +105,7 @@ Recommended next session:
 2. Create one real weekly analytics JSON record with `python3 tools/analytics/analytics_cli.py new-week --week-start YYYY-MM-DD --output data/online-analytics/YYYY-MM-DD.json`.
 3. Manually collect one week from Church Online Platform, Resi, YouTube, and Facebook/app sources as available.
 4. Run `validate` and `summarize`; use the missing-source warnings to decide which source should be automated first.
-5. Most likely first automation: YouTube Analytics read-only connector; likely second: Resi export parser.
+5. Most likely first automation: YouTube Analytics read-only connector; likely second: Resi export parser, not a Resi analytics API connector unless vendor support confirms one.
 
 ## Context caveat
 

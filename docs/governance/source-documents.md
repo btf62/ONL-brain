@@ -148,17 +148,23 @@ URLs:
 
 - `https://resi.io/features/analytics/`
 - `https://resi.io/go-live-api/`
+- `https://support.pushpay.com/s/article/Resi-API-Basics?type=resi`
+- `https://api.resi.io/docs`
+- `https://api.resi.io/docs/v3/api-docs`
 
 Why it matters:
 
 - documents Resi's analytics, exports, live/on-demand reporting, social analytics, and destination-level stream context
-- confirms a public Go Live API exists for production control, while analytics automation still needs verification
+- confirms the public OAuth token endpoint and a working On Demand API surface
+- confirms a public Go Live API exists for production control
+- confirms the public OpenAPI spec does not currently list analytics, KPI, viewer, watch-time, or export endpoints
 
 Likely repo outputs:
 
-- Resi source-system boundary
-- analytics export workflow
-- future API investigation task
+- [Resi source-system boundary](source-systems.md)
+- [Online Analytics Reporting](../operations/analytics-reporting.md)
+- [Resi API Investigation](../operations/resi-api-investigation.md)
+- analytics export workflow or parser if repeatable exports are available
 
 ### YouTube Analytics API
 

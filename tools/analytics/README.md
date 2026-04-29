@@ -49,7 +49,7 @@ The tool does not send email.
 Likely connector order:
 
 1. YouTube Analytics API read-only connector.
-2. Resi export parser.
+2. Resi export parser. The tested public Resi API currently exposes media/control surfaces, not analytics.
 3. Church Online Platform export or admin-screen helper, if a supported export path exists.
 4. Meta/Facebook connector only after Page permissions and metric definitions are confirmed.
 5. Triumph/app/TV connector after the source of those metrics is identified.

@@ -30,6 +30,7 @@ This includes everything required to prepare, deliver, and review the online min
 - [Production Workflow](production-workflow.md)
 - [Technical Systems](technical-systems.md)
 - [Streaming Rack System](streaming-rack-system.md)
+- [Group Finder Summer Groups Filter](group-finder-summer-groups-filter.md)
 - [Online Analytics Reporting](analytics-reporting.md)
 - [Budget Monitoring](budget-monitoring.md)
 - [HR Compliance Responsibilities](hr-compliance.md)

@@ -12,6 +12,7 @@ They do not replace pastoral judgment, staff ownership, or serve team responsibi
 - [Online Response Queue Agent](online-response-queue-agent.md)
 - [Baptism Pipeline Agent](baptism-pipeline-agent.md)
 - [Confluence Promotion Agent](confluence-promotion-agent.md)
+- [Repo Steward Agent](repo-steward-agent.md)
 - [Serve Team Roster Agent](serve-team-roster-agent.md)
 - [Budget Watch Agent](budget-watch-agent.md)
 - [Online Analytics Reporting Agent](online-analytics-reporting-agent.md)

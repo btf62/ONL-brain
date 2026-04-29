@@ -9,7 +9,9 @@
     "resi": {
       "collection_method": "manual_export",
       "studio_url": "https://studio.resi.io",
-      "notes": "Use Resi analytics export first. Public analytics API not confirmed."
+      "api_url": "https://api.resi.io",
+      "oauth_token_url": "https://api.resi.io/v1/oauth/token",
+      "notes": "Use Resi analytics export first. Public OAuth and On Demand API access is confirmed, but public analytics API endpoints were not found."
     },
     "youtube": {
       "collection_method": "api_candidate",
