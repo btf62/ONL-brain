@@ -17,5 +17,6 @@ They answer questions like:
 - [Related Repositories](related-repositories.md)
 - [Repo and Confluence Boundary](repo-confluence-boundary.md)
 - [Promotion Review Agent](promotion-review-agent.md)
+- [Session Health](session-health.md)
 - [Source Documents](source-documents.md)
 - [Source Systems](source-systems.md)

@@ -10,8 +10,15 @@ Before doing work, read:
 2. [HANDOFF.md](HANDOFF.md)
 3. [Access and Safety](docs/governance/access-and-safety.md)
 4. [Source Systems](docs/governance/source-systems.md)
+5. [Session Health](docs/governance/session-health.md) when the task involves context checks, source-system access, connector use, setup, or cross-domain switching
 
 Then read the task-specific docs linked from those files.
+
+If the user says `Context check`, report the current repo, path, branch, sync state, worktree state, active domain/workspace, current handoff status, and default safety posture.
+
+If the user says `Session health`, include the context check plus task-specific readiness checks from [Session Health](docs/governance/session-health.md).
+
+When switching between ONL Brain, ScriptBrain, Rock Workbench, and rock-agent, run the target repo's context check before editing there.
 
 ## Working posture
 

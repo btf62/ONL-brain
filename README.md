@@ -33,6 +33,9 @@ The long-term goal is to make this repository useful in four ways:
 
 For a new Codex session, start with [Agent Instructions](AGENTS.md) and [Session Handoff](HANDOFF.md). They name the restore prompt, safety boundaries, and first files to read.
 
+Use `Context check` to report repo/path/branch/worktree/domain state.
+Use `Session health` before source-system access, connector use, private workspace work, analytics reporting, or cross-domain switching. The local pattern lives in [Session Health](docs/governance/session-health.md).
+
 Start with the overview docs:
 
 1. Read [Vision Overview](docs/vision/README.md)

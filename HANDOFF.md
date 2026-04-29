@@ -37,14 +37,15 @@ Read in this order:
 3. [HANDOFF.md](HANDOFF.md)
 4. [Access and Safety](docs/governance/access-and-safety.md)
 5. [Source Systems](docs/governance/source-systems.md)
-6. [Agents Overview](agents/README.md)
-7. [Governance Overview](docs/governance/README.md)
-8. [Dashboards Overview](docs/dashboards/README.md)
-9. [360 Reviews Workspace](docs/workspaces/360-reviews/README.md)
-10. [Todoist Toolkit](tools/todoist/README.md)
-11. [Online Analytics Reporting](docs/operations/analytics-reporting.md)
-12. [Resi API Investigation](docs/operations/resi-api-investigation.md)
-13. [Online Analytics Toolkit](tools/analytics/README.md)
+6. [Session Health](docs/governance/session-health.md)
+7. [Agents Overview](agents/README.md)
+8. [Governance Overview](docs/governance/README.md)
+9. [Dashboards Overview](docs/dashboards/README.md)
+10. [360 Reviews Workspace](docs/workspaces/360-reviews/README.md)
+11. [Todoist Toolkit](tools/todoist/README.md)
+12. [Online Analytics Reporting](docs/operations/analytics-reporting.md)
+13. [Resi API Investigation](docs/operations/resi-api-investigation.md)
+14. [Online Analytics Toolkit](tools/analytics/README.md)
 
 Then read the area-specific docs for the task at hand.
 
