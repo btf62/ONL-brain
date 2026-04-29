@@ -7,6 +7,7 @@ Use this checklist to run the recurring weekly work of the online campus.
 - Confirm upcoming service plan, message, and any online-specific moments
 - Review scripts, announcements, and required video assets
 - Confirm serve team coverage for hosts, moderators, and technical roles
+- Prepare the Tuesday [Text HELLO Co-Host Prayer Handoff](text-hello-cohost-prayer-handoff.md) for the previous Sunday's co-host
 - Review outstanding follow-up items from the previous weekend
 - Check for any special campaigns, baptism moments, or calls to action
 
@@ -37,6 +38,7 @@ Use this checklist to run the recurring weekly work of the online campus.
 ## Post-service
 
 - Close out outstanding chat conversations
+- Download or verify Church Online Platform transcript bundles using [Church Online Chat Transcript Archive](church-online-chat-transcript-archive.md)
 - Enter or verify follow-up items in Rock RMS
 - Route prayer, care, baptism, membership, and serving responses appropriately
 - Debrief issues, wins, and notable stories

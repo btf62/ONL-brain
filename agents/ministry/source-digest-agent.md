@@ -10,6 +10,7 @@ Review external source material and propose what should become repo documentatio
 - Google Drive docs, sheets, PDFs, and shared-drive files
 - Confluence pages in `Northridge ONL Operations`
 - Rock data or reports surfaced through Rock Agent
+- Church Online Platform transcript archives when the user requests a bounded service/date review
 - Gemini or email digests provided by the user
 - Existing repo docs, especially [Knowledge Sources Backlog](../../docs/governance/knowledge-sources-backlog.md) and [Source Documents](../../docs/governance/source-documents.md)
 
@@ -34,6 +35,7 @@ Review external source material and propose what should become repo documentatio
 - Do not run broad Gmail searches unless the user specifically asks for one.
 - Keep Gmail searches and reads narrow to the current source question, topic, sender, date range, label, or digest request.
 - Do not copy sensitive email or pastoral content into the repo.
+- Do not copy raw Church Online Platform transcript text into the repo.
 - Never send email to anyone other than Brad's own work account when he explicitly requests a self-email.
 - Prepare email draft copy only when explicitly requested, and leave it for human review.
 - Do not treat rough source material as approved operating policy.

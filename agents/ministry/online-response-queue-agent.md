@@ -37,6 +37,7 @@ Monitor online campus response queues so prayer requests, baptism interest, memb
 - serving: first response within 48 hours
 - groups/community: first response within 48 hours
 - `TEXT HELLO`: review and pray weekly
+- `TEXT HELLO` co-host handoff: prepare Tuesday draft for the previous Sunday's co-host
 
 ## Boundaries
 
@@ -58,3 +59,5 @@ Start with a weekly manual digest:
 3. Identify items with no visible response.
 4. Flag overdue items by response target.
 5. Prepare draft next actions for human review.
+
+For the recurring `TEXT HELLO` co-host handoff, follow [Text HELLO Co-Host Prayer Handoff](../../docs/operations/text-hello-cohost-prayer-handoff.md). Keep Gmail reads narrow to the target label/date and prepare draft copy for Brad instead of sending directly.

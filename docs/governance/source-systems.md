@@ -154,12 +154,14 @@ Use for:
 - unique viewers or attenders
 - peak concurrent attenders
 - public chat participants and messages
+- chat transcript bundles when archiving or reviewing a bounded service date
 - live prayer sessions and prayer requests
 - Moment impressions and interactions
 
 Access rules:
 
 - use narrow reads tied to the weekly analytics reporting task
+- use transcript downloads only for bounded archive, response follow-up, source digestion, or incident-review workflows
 - prefer summarized weekly metrics over raw transcript or attender detail
 - do not copy chat transcripts, prayer content, or unnecessary personal details into the repo
 
@@ -167,11 +169,13 @@ Do not use for:
 
 - total cross-platform online attendance unless the stream distribution and deduplication method is documented
 - raw pastoral-content storage
+- committing transcript zip files or raw transcript exports to this repo
 - replacing Rock RMS for follow-up records
 
 Note:
 
 - public support documentation describes admin analytics, but a public reporting API has not yet been confirmed
+- the local chat transcript archive is documented in [Church Online Chat Transcript Archive](../operations/church-online-chat-transcript-archive.md)
 
 ### Resi
 
