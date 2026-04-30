@@ -36,6 +36,10 @@ For a new Codex session, start with [Agent Instructions](AGENTS.md) and [Session
 Use `Context check` to report repo/path/branch/worktree/domain state.
 Use `Session health` before source-system access, connector use, private workspace work, analytics reporting, or cross-domain switching. The local pattern lives in [Session Health](docs/governance/session-health.md).
 
+## Local Scratchpad
+
+A root-level `to-dos.md` file may be used for transient personal reminders and short-lived parking-lot items. It is intentionally git-ignored and should not be treated as durable repo documentation. Individual items may include local date/time stamps so stale reminders are easy to spot.
+
 Start with the overview docs:
 
 1. Read [Vision Overview](docs/vision/README.md)
