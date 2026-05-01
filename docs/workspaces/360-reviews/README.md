@@ -39,6 +39,16 @@ It may hold:
 - employee-specific notes
 - private writing prompts
 
+The archive builder code is tracked at:
+
+- `tools/360/build-review-archive.py`
+
+That script generates private archive outputs under:
+
+- `docs/workspaces/360-reviews/private/archive/`
+
+Keep the generated content private, but keep the reusable code outside `private/`.
+
 Do not commit:
 
 - employee-specific review content
